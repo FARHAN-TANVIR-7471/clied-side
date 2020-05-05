@@ -79,7 +79,7 @@ class UserController extends Controller
 
         $response = Http::get("http://127.0.0.1:8081/api/products/$id");
         $results = json_decode($response);
-        $totalproduct = $results->data[0]->totalproduct;
+        $totalproduct = $results->data->totalproduct;
         //dd($results);
 
     	return view('userInterface.mens',compact('results','totalproduct')); 

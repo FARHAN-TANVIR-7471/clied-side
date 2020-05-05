@@ -152,42 +152,45 @@
 						<!-- card group  -->
 						<div class="card-group">
 							@foreach ($results->data as $user)
-	                		@if($user->gender_id == 1 && $user->product_type_id == $product_type)
+	                		@if($user->data->gender_id == 1 && $user->data->product_type_id == $product_type)
 
 							<!-- card size-->
-							<div class="col-lg-3 col-sm-6 p-2">
-								<div class="card product-men p-3">
-									<div class="men-thumb-item">
-										<img src="{{$user->image}}" alt="img" class="card-img-top">
-										<div class="men-cart-pro">
-											<div class="inner-men-cart-pro">
-												<a href="{{'/user/mens/' . $user->id}}" class="link-product-add-cart">Quick View</a>
-											</div>
-										</div>
-									</div>
-									<!-- card body -->
-									<div class="card-body  py-3 px-2">
-										<h5 class="card-title text-capitalize">{{$user->name}}</h5>
-										<div class="card-text d-flex justify-content-between">
-											<p class="text-dark font-weight-bold">${{ $user->totalPrice }}</p>
-											<p class="line-through">${{ $user->price }}</p>
-										</div>
-									</div>
-									<!-- card footer -->
-	                                <div class="card-footer d-flex justify-content-end">
-	                                    <form action="#" method="post">
-	                                        <input type="hidden" name="cmd" value="_cart">
-	                                        <input type="hidden" name="add" value="1">
-	                                        <input type="hidden" name="hub_item" value="{{$user->name}}">
-	                                        <input type="hidden" name="amount" value="{{ $user->totalPrice }}">
-	                                        <button type="submit" class="hub-cart phub-cart btn">
-	                                            <i class="fa fa-cart-plus" aria-hidden="true"></i>
-	                                        </button>
-	                                        <a href="#" data-toggle="modal" data-target="#myModal1"></a>
-	                                    </form>
-	                                </div>
-								</div>
-							</div>
+							<div class="col-lg-2 col-sm-6 p-2">
+                            <div class="card product-men p-3">
+                                <div class="men-thumb-item">
+                                    <img src="{{$user->data->image}}" alt="img" class="card-img-top">
+                                    <div class="men-cart-pro">
+                                        <div class="inner-men-cart-pro">
+                                            <a href="{{'/user/mens/' . $user->data->id}}" class="link-product-add-cart">Quick View</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- card body -->
+                                <div class="card-body  py-3 px-2">
+                                    <h5 class="card-title text-capitalize">{{$user->data->name}}</h5>
+                                    <div class="card-text d-flex justify-content-between">
+                                        <p class="text-dark font-weight-bold">Tk{{ $user->data->totalPrice }}</p>
+                                        <p class="line-through">Tk{{ $user->data->price }}</p>
+                                    </div>
+                                </div>
+                                <!-- card footer -->
+                                <div class="card-footer d-flex justify-content-end">
+                                    <form action="{{route('cart.add')}}" method="post">
+                                        {{csrf_field()}}
+                                        <div class="quantity">
+                                            <input  type="hidden" name="qty" value="1">
+                                            <input type="hidden" name="pdtId" value="{{ $user->data->id }}">
+                                            <input  type="hidden" name="pdtName" value="{{$user->data->name}}">
+                                            <input type="hidden" name="pdtPrice" value="{{ $user->data->totalPrice }}">
+                                        </div>
+                                        <button type="submit" class="hub-cart phub-cart btn">
+                                            <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                        </button>
+                                    </form>
+                                        
+                                </div>
+                            </div>
+                        </div>
 							@endif
 	                		@endforeach
 							<!-- //card -->
@@ -201,41 +204,44 @@
 						<!-- card group  -->
 						<div class="card-group">
 							@foreach ($results->data as $user)
-	                		@if($user->gender_id == 1 && $user->custom == 'Yes')
+	                		@if($user->data->gender_id == 1 && $user->data->custom == 'Yes')
 
 							<!-- card size-->
-							<div class="col-lg-3 col-sm-6 p-2">
-								<div class="card product-men p-3">
-									<div class="men-thumb-item">
-										<img src="{{$user->image}}" alt="img" class="card-img-top">
-										<div class="men-cart-pro">
-											<div class="inner-men-cart-pro">
-												<a href="{{'/user/mens/' . $user->id}}" class="link-product-add-cart">Quick View</a>
-											</div>
-										</div>
-									</div>
-									<!-- card body -->
-									<div class="card-body  py-3 px-2">
-										<h5 class="card-title text-capitalize">{{$user->name}}</h5>
-										<div class="card-text d-flex justify-content-between">
-											<p class="text-dark font-weight-bold">${{ $user->totalPrice }}</p>
-											<p class="line-through">${{ $user->price }}</p>
-										</div>
-									</div>
-									<!-- card footer -->
-	                                <div class="card-footer d-flex justify-content-end">
-	                                    <form action="#" method="post">
-	                                        <input type="hidden" name="cmd" value="_cart">
-	                                        <input type="hidden" name="add" value="1">
-	                                        <input type="hidden" name="hub_item" value="{{$user->name}}">
-	                                        <input type="hidden" name="amount" value="{{ $user->totalPrice }}">
-	                                        <button type="submit" class="hub-cart phub-cart btn">
-	                                            <i class="fa fa-cart-plus" aria-hidden="true"></i>
-	                                        </button>
-	                                        <a href="#" data-toggle="modal" data-target="#myModal1"></a>
-	                                    </form>
-	                                </div>
-								</div>
+							<div class="col-lg-2 col-sm-6 p-2">
+							    <div class="card product-men p-3">
+							        <div class="men-thumb-item">
+							            <img src="{{$user->data->image}}" alt="img" class="card-img-top">
+							            <div class="men-cart-pro">
+							                <div class="inner-men-cart-pro">
+							                    <a href="{{'/user/mens/' . $user->data->id}}" class="link-product-add-cart">Quick View</a>
+							                </div>
+							            </div>
+							        </div>
+							        <!-- card body -->
+							        <div class="card-body  py-3 px-2">
+							            <h5 class="card-title text-capitalize">{{$user->data->name}}</h5>
+							            <div class="card-text d-flex justify-content-between">
+							                <p class="text-dark font-weight-bold">Tk{{ $user->data->totalPrice }}</p>
+							                <p class="line-through">Tk{{ $user->data->price }}</p>
+							            </div>
+							        </div>
+							        <!-- card footer -->
+							        <div class="card-footer d-flex justify-content-end">
+							            <form action="{{route('cart.add')}}" method="post">
+							                {{csrf_field()}}
+							                <div class="quantity">
+							                    <input  type="hidden" name="qty" value="1">
+							                    <input type="hidden" name="pdtId" value="{{ $user->data->id }}">
+							                    <input  type="hidden" name="pdtName" value="{{$user->data->name}}">
+							                    <input type="hidden" name="pdtPrice" value="{{ $user->data->totalPrice }}">
+							                </div>
+							                <button type="submit" class="hub-cart phub-cart btn">
+							                    <i class="fa fa-cart-plus" aria-hidden="true"></i>
+							                </button>
+							            </form>
+							                
+							        </div>
+							    </div>
 							</div>
 							@endif
 	                		@endforeach
@@ -250,41 +256,44 @@
 						<!-- card group  -->
 						<div class="card-group">
 							@foreach ($results->data as $user)
-	                		@if($user->gender_id == 1 && $user->trend == 'yes')
+	                		@if($user->data->gender_id == 1 && $user->data->trend == 'yes')
 
 							<!-- card size-->
-							<div class="col-lg-3 col-sm-6 p-2">
-								<div class="card product-men p-3">
-									<div class="men-thumb-item">
-										<img src="{{$user->image}}" alt="img" class="card-img-top">
-										<div class="men-cart-pro">
-											<div class="inner-men-cart-pro">
-												<a href="{{'/user/mens/' . $user->id}}" class="link-product-add-cart">Quick View</a>
-											</div>
-										</div>
-									</div>
-									<!-- card body -->
-									<div class="card-body  py-3 px-2">
-										<h5 class="card-title text-capitalize">{{$user->name}}</h5>
-										<div class="card-text d-flex justify-content-between">
-											<p class="text-dark font-weight-bold">${{ $user->totalPrice }}</p>
-											<p class="line-through">${{ $user->price }}</p>
-										</div>
-									</div>
-									<!-- card footer -->
-	                                <div class="card-footer d-flex justify-content-end">
-	                                    <form action="#" method="post">
-	                                        <input type="hidden" name="cmd" value="_cart">
-	                                        <input type="hidden" name="add" value="1">
-	                                        <input type="hidden" name="hub_item" value="{{$user->name}}">
-	                                        <input type="hidden" name="amount" value="{{ $user->totalPrice }}">
-	                                        <button type="submit" class="hub-cart phub-cart btn">
-	                                            <i class="fa fa-cart-plus" aria-hidden="true"></i>
-	                                        </button>
-	                                        <a href="#" data-toggle="modal" data-target="#myModal1"></a>
-	                                    </form>
-	                                </div>
-								</div>
+							<div class="col-lg-2 col-sm-6 p-2">
+							    <div class="card product-men p-3">
+							        <div class="men-thumb-item">
+							            <img src="{{$user->data->image}}" alt="img" class="card-img-top">
+							            <div class="men-cart-pro">
+							                <div class="inner-men-cart-pro">
+							                    <a href="{{'/user/mens/' . $user->data->id}}" class="link-product-add-cart">Quick View</a>
+							                </div>
+							            </div>
+							        </div>
+							        <!-- card body -->
+							        <div class="card-body  py-3 px-2">
+							            <h5 class="card-title text-capitalize">{{$user->data->name}}</h5>
+							            <div class="card-text d-flex justify-content-between">
+							                <p class="text-dark font-weight-bold">Tk{{ $user->data->totalPrice }}</p>
+							                <p class="line-through">Tk{{ $user->data->price }}</p>
+							            </div>
+							        </div>
+							        <!-- card footer -->
+							        <div class="card-footer d-flex justify-content-end">
+							            <form action="{{route('cart.add')}}" method="post">
+							                {{csrf_field()}}
+							                <div class="quantity">
+							                    <input  type="hidden" name="qty" value="1">
+							                    <input type="hidden" name="pdtId" value="{{ $user->data->id }}">
+							                    <input  type="hidden" name="pdtName" value="{{$user->data->name}}">
+							                    <input type="hidden" name="pdtPrice" value="{{ $user->data->totalPrice }}">
+							                </div>
+							                <button type="submit" class="hub-cart phub-cart btn">
+							                    <i class="fa fa-cart-plus" aria-hidden="true"></i>
+							                </button>
+							            </form>
+							                
+							        </div>
+							    </div>
 							</div>
 							@endif
 	                		@endforeach
@@ -299,41 +308,44 @@
 						<!-- card group  -->
 						<div class="card-group">
 							@foreach ($results->data as $user)
-	                		@if($user->gender_id == 1 && $user->size == 'S')
+	                		@if($user->data->gender_id == 1 && $user->data->size == 'S')
 
 							<!-- card size-->
-							<div class="col-lg-3 col-sm-6 p-2">
-								<div class="card product-men p-3">
-									<div class="men-thumb-item">
-										<img src="{{$user->image}}" alt="img" class="card-img-top">
-										<div class="men-cart-pro">
-											<div class="inner-men-cart-pro">
-												<a href="{{'/user/mens/' . $user->id}}" class="link-product-add-cart">Quick View</a>
-											</div>
-										</div>
-									</div>
-									<!-- card body -->
-									<div class="card-body  py-3 px-2">
-										<h5 class="card-title text-capitalize">{{$user->name}}</h5>
-										<div class="card-text d-flex justify-content-between">
-											<p class="text-dark font-weight-bold">${{ $user->totalPrice }}</p>
-											<p class="line-through">${{ $user->price }}</p>
-										</div>
-									</div>
-									<!-- card footer -->
-	                                <div class="card-footer d-flex justify-content-end">
-	                                    <form action="#" method="post">
-	                                        <input type="hidden" name="cmd" value="_cart">
-	                                        <input type="hidden" name="add" value="1">
-	                                        <input type="hidden" name="hub_item" value="{{$user->name}}">
-	                                        <input type="hidden" name="amount" value="{{ $user->totalPrice }}">
-	                                        <button type="submit" class="hub-cart phub-cart btn">
-	                                            <i class="fa fa-cart-plus" aria-hidden="true"></i>
-	                                        </button>
-	                                        <a href="#" data-toggle="modal" data-target="#myModal1"></a>
-	                                    </form>
-	                                </div>
-								</div>
+							<div class="col-lg-2 col-sm-6 p-2">
+							    <div class="card product-men p-3">
+							        <div class="men-thumb-item">
+							            <img src="{{$user->data->image}}" alt="img" class="card-img-top">
+							            <div class="men-cart-pro">
+							                <div class="inner-men-cart-pro">
+							                    <a href="{{'/user/mens/' . $user->data->id}}" class="link-product-add-cart">Quick View</a>
+							                </div>
+							            </div>
+							        </div>
+							        <!-- card body -->
+							        <div class="card-body  py-3 px-2">
+							            <h5 class="card-title text-capitalize">{{$user->data->name}}</h5>
+							            <div class="card-text d-flex justify-content-between">
+							                <p class="text-dark font-weight-bold">Tk{{ $user->data->totalPrice }}</p>
+							                <p class="line-through">Tk{{ $user->data->price }}</p>
+							            </div>
+							        </div>
+							        <!-- card footer -->
+							        <div class="card-footer d-flex justify-content-end">
+							            <form action="{{route('cart.add')}}" method="post">
+							                {{csrf_field()}}
+							                <div class="quantity">
+							                    <input  type="hidden" name="qty" value="1">
+							                    <input type="hidden" name="pdtId" value="{{ $user->data->id }}">
+							                    <input  type="hidden" name="pdtName" value="{{$user->data->name}}">
+							                    <input type="hidden" name="pdtPrice" value="{{ $user->data->totalPrice }}">
+							                </div>
+							                <button type="submit" class="hub-cart phub-cart btn">
+							                    <i class="fa fa-cart-plus" aria-hidden="true"></i>
+							                </button>
+							            </form>
+							                
+							        </div>
+							    </div>
 							</div>
 							@endif
 	                		@endforeach
@@ -349,41 +361,44 @@
 						<!-- card group  -->
 						<div class="card-group">
 							@foreach ($results->data as $user)
-	                		@if($user->gender_id == 1 && $user->size == 'M')
+	                		@if($user->data->gender_id == 1 && $user->data->size == 'M')
 
 							<!-- card size-->
-							<div class="col-lg-3 col-sm-6 p-2">
-								<div class="card product-men p-3">
-									<div class="men-thumb-item">
-										<img src="{{$user->image}}" alt="img" class="card-img-top">
-										<div class="men-cart-pro">
-											<div class="inner-men-cart-pro">
-												<a href="{{'/user/mens/' . $user->id}}" class="link-product-add-cart">Quick View</a>
-											</div>
-										</div>
-									</div>
-									<!-- card body -->
-									<div class="card-body  py-3 px-2">
-										<h5 class="card-title text-capitalize">{{$user->name}}</h5>
-										<div class="card-text d-flex justify-content-between">
-											<p class="text-dark font-weight-bold">${{ $user->totalPrice }}</p>
-											<p class="line-through">${{ $user->price }}</p>
-										</div>
-									</div>
-									<!-- card footer -->
-	                                <div class="card-footer d-flex justify-content-end">
-	                                    <form action="#" method="post">
-	                                        <input type="hidden" name="cmd" value="_cart">
-	                                        <input type="hidden" name="add" value="1">
-	                                        <input type="hidden" name="hub_item" value="{{$user->name}}">
-	                                        <input type="hidden" name="amount" value="{{ $user->totalPrice }}">
-	                                        <button type="submit" class="hub-cart phub-cart btn">
-	                                            <i class="fa fa-cart-plus" aria-hidden="true"></i>
-	                                        </button>
-	                                        <a href="#" data-toggle="modal" data-target="#myModal1"></a>
-	                                    </form>
-	                                </div>
-								</div>
+							<div class="col-lg-2 col-sm-6 p-2">
+							    <div class="card product-men p-3">
+							        <div class="men-thumb-item">
+							            <img src="{{$user->data->image}}" alt="img" class="card-img-top">
+							            <div class="men-cart-pro">
+							                <div class="inner-men-cart-pro">
+							                    <a href="{{'/user/mens/' . $user->data->id}}" class="link-product-add-cart">Quick View</a>
+							                </div>
+							            </div>
+							        </div>
+							        <!-- card body -->
+							        <div class="card-body  py-3 px-2">
+							            <h5 class="card-title text-capitalize">{{$user->data->name}}</h5>
+							            <div class="card-text d-flex justify-content-between">
+							                <p class="text-dark font-weight-bold">Tk{{ $user->data->totalPrice }}</p>
+							                <p class="line-through">Tk{{ $user->data->price }}</p>
+							            </div>
+							        </div>
+							        <!-- card footer -->
+							        <div class="card-footer d-flex justify-content-end">
+							            <form action="{{route('cart.add')}}" method="post">
+							                {{csrf_field()}}
+							                <div class="quantity">
+							                    <input  type="hidden" name="qty" value="1">
+							                    <input type="hidden" name="pdtId" value="{{ $user->data->id }}">
+							                    <input  type="hidden" name="pdtName" value="{{$user->data->name}}">
+							                    <input type="hidden" name="pdtPrice" value="{{ $user->data->totalPrice }}">
+							                </div>
+							                <button type="submit" class="hub-cart phub-cart btn">
+							                    <i class="fa fa-cart-plus" aria-hidden="true"></i>
+							                </button>
+							            </form>
+							                
+							        </div>
+							    </div>
 							</div>
 							@endif
 	                		@endforeach
@@ -399,41 +414,44 @@
 						<!-- card group  -->
 						<div class="card-group">
 							@foreach ($results->data as $user)
-	                		@if($user->gender_id == 1 && $user->size == 'L')
+	                		@if($user->data->gender_id == 1 && $user->data->size == 'L')
 
 							<!-- card size-->
-							<div class="col-lg-3 col-sm-6 p-2">
-								<div class="card product-men p-3">
-									<div class="men-thumb-item">
-										<img src="{{$user->image}}" alt="img" class="card-img-top">
-										<div class="men-cart-pro">
-											<div class="inner-men-cart-pro">
-												<a href="{{'/user/mens/' . $user->id}}" class="link-product-add-cart">Quick View</a>
-											</div>
-										</div>
-									</div>
-									<!-- card body -->
-									<div class="card-body  py-3 px-2">
-										<h5 class="card-title text-capitalize">{{$user->name}}</h5>
-										<div class="card-text d-flex justify-content-between">
-											<p class="text-dark font-weight-bold">${{ $user->totalPrice }}</p>
-											<p class="line-through">${{ $user->price }}</p>
-										</div>
-									</div>
-									<!-- card footer -->
-	                                <div class="card-footer d-flex justify-content-end">
-	                                    <form action="#" method="post">
-	                                        <input type="hidden" name="cmd" value="_cart">
-	                                        <input type="hidden" name="add" value="1">
-	                                        <input type="hidden" name="hub_item" value="{{$user->name}}">
-	                                        <input type="hidden" name="amount" value="{{ $user->totalPrice }}">
-	                                        <button type="submit" class="hub-cart phub-cart btn">
-	                                            <i class="fa fa-cart-plus" aria-hidden="true"></i>
-	                                        </button>
-	                                        <a href="#" data-toggle="modal" data-target="#myModal1"></a>
-	                                    </form>
-	                                </div>
-								</div>
+							<div class="col-lg-2 col-sm-6 p-2">
+							    <div class="card product-men p-3">
+							        <div class="men-thumb-item">
+							            <img src="{{$user->data->image}}" alt="img" class="card-img-top">
+							            <div class="men-cart-pro">
+							                <div class="inner-men-cart-pro">
+							                    <a href="{{'/user/mens/' . $user->data->id}}" class="link-product-add-cart">Quick View</a>
+							                </div>
+							            </div>
+							        </div>
+							        <!-- card body -->
+							        <div class="card-body  py-3 px-2">
+							            <h5 class="card-title text-capitalize">{{$user->data->name}}</h5>
+							            <div class="card-text d-flex justify-content-between">
+							                <p class="text-dark font-weight-bold">Tk{{ $user->data->totalPrice }}</p>
+							                <p class="line-through">Tk{{ $user->data->price }}</p>
+							            </div>
+							        </div>
+							        <!-- card footer -->
+							        <div class="card-footer d-flex justify-content-end">
+							            <form action="{{route('cart.add')}}" method="post">
+							                {{csrf_field()}}
+							                <div class="quantity">
+							                    <input  type="hidden" name="qty" value="1">
+							                    <input type="hidden" name="pdtId" value="{{ $user->data->id }}">
+							                    <input  type="hidden" name="pdtName" value="{{$user->data->name}}">
+							                    <input type="hidden" name="pdtPrice" value="{{ $user->data->totalPrice }}">
+							                </div>
+							                <button type="submit" class="hub-cart phub-cart btn">
+							                    <i class="fa fa-cart-plus" aria-hidden="true"></i>
+							                </button>
+							            </form>
+							                
+							        </div>
+							    </div>
 							</div>
 							@endif
 	                		@endforeach
@@ -449,42 +467,45 @@
 						<!-- card group  -->
 						<div class="card-group">
 							@foreach ($results->data as $user)
-	                		@if($user->gender_id == 1 && $user->size == 'XL')
+	                		@if($user->data->gender_id == 1 && $user->data->size == 'XL')
 
 							<!-- card size-->
-							<div class="col-lg-3 col-sm-6 p-2">
-								<div class="card product-men p-3">
-									<div class="men-thumb-item">
-										<img src="{{$user->image}}" alt="img" class="card-img-top">
-										<div class="men-cart-pro">
-											<div class="inner-men-cart-pro">
-												<a href="{{'/user/mens/' . $user->id}}" class="link-product-add-cart">Quick View</a>
-											</div>
-										</div>
-									</div>
-									<!-- card body -->
-									<div class="card-body  py-3 px-2">
-										<h5 class="card-title text-capitalize">{{$user->name}}</h5>
-										<div class="card-text d-flex justify-content-between">
-											<p class="text-dark font-weight-bold">${{ $user->totalPrice }}</p>
-											<p class="line-through">${{ $user->price }}</p>
-										</div>
-									</div>
-									<!-- card footer -->
-	                                <div class="card-footer d-flex justify-content-end">
-	                                    <form action="#" method="post">
-	                                        <input type="hidden" name="cmd" value="_cart">
-	                                        <input type="hidden" name="add" value="1">
-	                                        <input type="hidden" name="hub_item" value="{{$user->name}}">
-	                                        <input type="hidden" name="amount" value="{{ $user->totalPrice }}">
-	                                        <button type="submit" class="hub-cart phub-cart btn">
-	                                            <i class="fa fa-cart-plus" aria-hidden="true"></i>
-	                                        </button>
-	                                        <a href="#" data-toggle="modal" data-target="#myModal1"></a>
-	                                    </form>
-	                                </div>
-								</div>
-							</div>
+							<div class="col-lg-2 col-sm-6 p-2">
+                            <div class="card product-men p-3">
+                                <div class="men-thumb-item">
+                                    <img src="{{$user->data->image}}" alt="img" class="card-img-top">
+                                    <div class="men-cart-pro">
+                                        <div class="inner-men-cart-pro">
+                                            <a href="{{'/user/mens/' . $user->data->id}}" class="link-product-add-cart">Quick View</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- card body -->
+                                <div class="card-body  py-3 px-2">
+                                    <h5 class="card-title text-capitalize">{{$user->data->name}}</h5>
+                                    <div class="card-text d-flex justify-content-between">
+                                        <p class="text-dark font-weight-bold">Tk{{ $user->data->totalPrice }}</p>
+                                        <p class="line-through">Tk{{ $user->data->price }}</p>
+                                    </div>
+                                </div>
+                                <!-- card footer -->
+                                <div class="card-footer d-flex justify-content-end">
+                                    <form action="{{route('cart.add')}}" method="post">
+                                        {{csrf_field()}}
+                                        <div class="quantity">
+                                            <input  type="hidden" name="qty" value="1">
+                                            <input type="hidden" name="pdtId" value="{{ $user->data->id }}">
+                                            <input  type="hidden" name="pdtName" value="{{$user->data->name}}">
+                                            <input type="hidden" name="pdtPrice" value="{{ $user->data->totalPrice }}">
+                                        </div>
+                                        <button type="submit" class="hub-cart phub-cart btn">
+                                            <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                        </button>
+                                    </form>
+                                        
+                                </div>
+                            </div>
+                        </div>
 							@endif
 	                		@endforeach
 							<!-- //card -->
@@ -498,42 +519,45 @@
 						<!-- card group  -->
 						<div class="card-group">
 							@foreach ($results->data as $user)
-	                		@if($user->gender_id == 1 && $user->size == 'XXL')
+	                		@if($user->data->gender_id == 1 && $user->data->size == 'XXL')
 
 							<!-- card size-->
-							<div class="col-lg-3 col-sm-6 p-2">
-								<div class="card product-men p-3">
-									<div class="men-thumb-item">
-										<img src="{{$user->image}}" alt="img" class="card-img-top">
-										<div class="men-cart-pro">
-											<div class="inner-men-cart-pro">
-												<a href="{{'/user/mens/' . $user->id}}" class="link-product-add-cart">Quick View</a>
-											</div>
-										</div>
-									</div>
-									<!-- card body -->
-									<div class="card-body  py-3 px-2">
-										<h5 class="card-title text-capitalize">{{$user->name}}</h5>
-										<div class="card-text d-flex justify-content-between">
-											<p class="text-dark font-weight-bold">${{ $user->totalPrice }}</p>
-											<p class="line-through">${{ $user->price }}</p>
-										</div>
-									</div>
-									<!-- card footer -->
-	                                <div class="card-footer d-flex justify-content-end">
-	                                    <form action="#" method="post">
-	                                        <input type="hidden" name="cmd" value="_cart">
-	                                        <input type="hidden" name="add" value="1">
-	                                        <input type="hidden" name="hub_item" value="{{$user->name}}">
-	                                        <input type="hidden" name="amount" value="{{ $user->totalPrice }}">
-	                                        <button type="submit" class="hub-cart phub-cart btn">
-	                                            <i class="fa fa-cart-plus" aria-hidden="true"></i>
-	                                        </button>
-	                                        <a href="#" data-toggle="modal" data-target="#myModal1"></a>
-	                                    </form>
-	                                </div>
-								</div>
-							</div>
+							<div class="col-lg-2 col-sm-6 p-2">
+                            <div class="card product-men p-3">
+                                <div class="men-thumb-item">
+                                    <img src="{{$user->data->image}}" alt="img" class="card-img-top">
+                                    <div class="men-cart-pro">
+                                        <div class="inner-men-cart-pro">
+                                            <a href="{{'/user/mens/' . $user->data->id}}" class="link-product-add-cart">Quick View</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- card body -->
+                                <div class="card-body  py-3 px-2">
+                                    <h5 class="card-title text-capitalize">{{$user->data->name}}</h5>
+                                    <div class="card-text d-flex justify-content-between">
+                                        <p class="text-dark font-weight-bold">Tk{{ $user->data->totalPrice }}</p>
+                                        <p class="line-through">Tk{{ $user->data->price }}</p>
+                                    </div>
+                                </div>
+                                <!-- card footer -->
+                                <div class="card-footer d-flex justify-content-end">
+                                    <form action="{{route('cart.add')}}" method="post">
+                                        {{csrf_field()}}
+                                        <div class="quantity">
+                                            <input  type="hidden" name="qty" value="1">
+                                            <input type="hidden" name="pdtId" value="{{ $user->data->id }}">
+                                            <input  type="hidden" name="pdtName" value="{{$user->data->name}}">
+                                            <input type="hidden" name="pdtPrice" value="{{ $user->data->totalPrice }}">
+                                        </div>
+                                        <button type="submit" class="hub-cart phub-cart btn">
+                                            <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                        </button>
+                                    </form>
+                                        
+                                </div>
+                            </div>
+                        </div>
 							@endif
 	                		@endforeach
 							<!-- //card -->
@@ -547,42 +571,45 @@
 						<!-- card group  -->
 						<div class="card-group">
 							@foreach ($results->data as $user)
-	                		@if($user->gender_id == 1 && $user->size == 'XXXL')
+	                		@if($user->data->gender_id == 1 && $user->data->size == 'XXXL')
 
 							<!-- card size-->
-							<div class="col-lg-3 col-sm-6 p-2">
-								<div class="card product-men p-3">
-									<div class="men-thumb-item">
-										<img src="{{$user->image}}" alt="img" class="card-img-top">
-										<div class="men-cart-pro">
-											<div class="inner-men-cart-pro">
-												<a href="{{'/user/mens/' . $user->id}}" class="link-product-add-cart">Quick View</a>
-											</div>
-										</div>
-									</div>
-									<!-- card body -->
-									<div class="card-body  py-3 px-2">
-										<h5 class="card-title text-capitalize">{{$user->name}}</h5>
-										<div class="card-text d-flex justify-content-between">
-											<p class="text-dark font-weight-bold">${{ $user->totalPrice }}</p>
-											<p class="line-through">${{ $user->price }}</p>
-										</div>
-									</div>
-									<!-- card footer -->
-	                                <div class="card-footer d-flex justify-content-end">
-	                                    <form action="#" method="post">
-	                                        <input type="hidden" name="cmd" value="_cart">
-	                                        <input type="hidden" name="add" value="1">
-	                                        <input type="hidden" name="hub_item" value="{{$user->name}}">
-	                                        <input type="hidden" name="amount" value="{{ $user->totalPrice }}">
-	                                        <button type="submit" class="hub-cart phub-cart btn">
-	                                            <i class="fa fa-cart-plus" aria-hidden="true"></i>
-	                                        </button>
-	                                        <a href="#" data-toggle="modal" data-target="#myModal1"></a>
-	                                    </form>
-	                                </div>
-								</div>
-							</div>
+							<div class="col-lg-2 col-sm-6 p-2">
+                            <div class="card product-men p-3">
+                                <div class="men-thumb-item">
+                                    <img src="{{$user->data->image}}" alt="img" class="card-img-top">
+                                    <div class="men-cart-pro">
+                                        <div class="inner-men-cart-pro">
+                                            <a href="{{'/user/mens/' . $user->data->id}}" class="link-product-add-cart">Quick View</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- card body -->
+                                <div class="card-body  py-3 px-2">
+                                    <h5 class="card-title text-capitalize">{{$user->data->name}}</h5>
+                                    <div class="card-text d-flex justify-content-between">
+                                        <p class="text-dark font-weight-bold">Tk{{ $user->data->totalPrice }}</p>
+                                        <p class="line-through">Tk{{ $user->data->price }}</p>
+                                    </div>
+                                </div>
+                                <!-- card footer -->
+                                <div class="card-footer d-flex justify-content-end">
+                                    <form action="{{route('cart.add')}}" method="post">
+                                        {{csrf_field()}}
+                                        <div class="quantity">
+                                            <input  type="hidden" name="qty" value="1">
+                                            <input type="hidden" name="pdtId" value="{{ $user->data->id }}">
+                                            <input  type="hidden" name="pdtName" value="{{$user->data->name}}">
+                                            <input type="hidden" name="pdtPrice" value="{{ $user->data->totalPrice }}">
+                                        </div>
+                                        <button type="submit" class="hub-cart phub-cart btn">
+                                            <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                        </button>
+                                    </form>
+                                        
+                                </div>
+                            </div>
+                        </div>
 							@endif
 	                		@endforeach
 							<!-- //card -->
@@ -597,42 +624,45 @@
 						<!-- card group  -->
 						<div class="card-group">
 							@foreach ($results->data as $user)
-	                		@if($user->gender_id == 1)
-	                		@if($user->discount = 0 || $user->discount <= 10)
+	                		@if($user->data->gender_id == 1)
+	                		@if($user->data->discount = 0 || $user->data->discount <= 10)
 							<!-- card size-->
-							<div class="col-lg-3 col-sm-6 p-2">
-								<div class="card product-men p-3">
-									<div class="men-thumb-item">
-										<img src="{{$user->image}}" alt="img" class="card-img-top">
-										<div class="men-cart-pro">
-											<div class="inner-men-cart-pro">
-												<a href="{{'/user/mens/' . $user->id}}" class="link-product-add-cart">Quick View</a>
-											</div>
-										</div>
-									</div>
-									<!-- card body -->
-									<div class="card-body  py-3 px-2">
-										<h5 class="card-title text-capitalize">{{$user->name}}</h5>
-										<div class="card-text d-flex justify-content-between">
-											<p class="text-dark font-weight-bold">${{ $user->totalPrice }}</p>
-											<p class="line-through">${{ $user->price }}</p>
-										</div>
-									</div>
-									<!-- card footer -->
-	                                <div class="card-footer d-flex justify-content-end">
-	                                    <form action="#" method="post">
-	                                        <input type="hidden" name="cmd" value="_cart">
-	                                        <input type="hidden" name="add" value="1">
-	                                        <input type="hidden" name="hub_item" value="{{$user->name}}">
-	                                        <input type="hidden" name="amount" value="{{ $user->totalPrice }}">
-	                                        <button type="submit" class="hub-cart phub-cart btn">
-	                                            <i class="fa fa-cart-plus" aria-hidden="true"></i>
-	                                        </button>
-	                                        <a href="#" data-toggle="modal" data-target="#myModal1"></a>
-	                                    </form>
-	                                </div>
-								</div>
-							</div>
+							<div class="col-lg-2 col-sm-6 p-2">
+                            <div class="card product-men p-3">
+                                <div class="men-thumb-item">
+                                    <img src="{{$user->data->image}}" alt="img" class="card-img-top">
+                                    <div class="men-cart-pro">
+                                        <div class="inner-men-cart-pro">
+                                            <a href="{{'/user/mens/' . $user->data->id}}" class="link-product-add-cart">Quick View</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- card body -->
+                                <div class="card-body  py-3 px-2">
+                                    <h5 class="card-title text-capitalize">{{$user->data->name}}</h5>
+                                    <div class="card-text d-flex justify-content-between">
+                                        <p class="text-dark font-weight-bold">Tk{{ $user->data->totalPrice }}</p>
+                                        <p class="line-through">Tk{{ $user->data->price }}</p>
+                                    </div>
+                                </div>
+                                <!-- card footer -->
+                                <div class="card-footer d-flex justify-content-end">
+                                    <form action="{{route('cart.add')}}" method="post">
+                                        {{csrf_field()}}
+                                        <div class="quantity">
+                                            <input  type="hidden" name="qty" value="1">
+                                            <input type="hidden" name="pdtId" value="{{ $user->data->id }}">
+                                            <input  type="hidden" name="pdtName" value="{{$user->data->name}}">
+                                            <input type="hidden" name="pdtPrice" value="{{ $user->data->totalPrice }}">
+                                        </div>
+                                        <button type="submit" class="hub-cart phub-cart btn">
+                                            <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                        </button>
+                                    </form>
+                                        
+                                </div>
+                            </div>
+                        </div>
 							@endif
 							@endif
 	                		@endforeach
@@ -648,42 +678,45 @@
 						<!-- card group  -->
 						<div class="card-group">
 							@foreach ($results->data as $user)
-	                		@if($user->gender_id == 1 && $user->size == 'M')
-	                		@if($user->discount > 10 || $user->discount <= 20)
+	                		@if($user->data->gender_id == 1 && $user->data->size == 'M')
+	                		@if($user->data->discount > 10 || $user->data->discount <= 20)
 							<!-- card size-->
-							<div class="col-lg-3 col-sm-6 p-2">
-								<div class="card product-men p-3">
-									<div class="men-thumb-item">
-										<img src="{{$user->image}}" alt="img" class="card-img-top">
-										<div class="men-cart-pro">
-											<div class="inner-men-cart-pro">
-												<a href="{{'/user/mens/' . $user->id}}" class="link-product-add-cart">Quick View</a>
-											</div>
-										</div>
-									</div>
-									<!-- card body -->
-									<div class="card-body  py-3 px-2">
-										<h5 class="card-title text-capitalize">{{$user->name}}</h5>
-										<div class="card-text d-flex justify-content-between">
-											<p class="text-dark font-weight-bold">${{ $user->totalPrice }}</p>
-											<p class="line-through">${{ $user->price }}</p>
-										</div>
-									</div>
-									<!-- card footer -->
-	                                <div class="card-footer d-flex justify-content-end">
-	                                    <form action="#" method="post">
-	                                        <input type="hidden" name="cmd" value="_cart">
-	                                        <input type="hidden" name="add" value="1">
-	                                        <input type="hidden" name="hub_item" value="{{$user->name}}">
-	                                        <input type="hidden" name="amount" value="{{ $user->totalPrice }}">
-	                                        <button type="submit" class="hub-cart phub-cart btn">
-	                                            <i class="fa fa-cart-plus" aria-hidden="true"></i>
-	                                        </button>
-	                                        <a href="#" data-toggle="modal" data-target="#myModal1"></a>
-	                                    </form>
-	                                </div>
-								</div>
-							</div>
+							<div class="col-lg-2 col-sm-6 p-2">
+                            <div class="card product-men p-3">
+                                <div class="men-thumb-item">
+                                    <img src="{{$user->data->image}}" alt="img" class="card-img-top">
+                                    <div class="men-cart-pro">
+                                        <div class="inner-men-cart-pro">
+                                            <a href="{{'/user/mens/' . $user->data->id}}" class="link-product-add-cart">Quick View</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- card body -->
+                                <div class="card-body  py-3 px-2">
+                                    <h5 class="card-title text-capitalize">{{$user->data->name}}</h5>
+                                    <div class="card-text d-flex justify-content-between">
+                                        <p class="text-dark font-weight-bold">Tk{{ $user->data->totalPrice }}</p>
+                                        <p class="line-through">Tk{{ $user->data->price }}</p>
+                                    </div>
+                                </div>
+                                <!-- card footer -->
+                                <div class="card-footer d-flex justify-content-end">
+                                    <form action="{{route('cart.add')}}" method="post">
+                                        {{csrf_field()}}
+                                        <div class="quantity">
+                                            <input  type="hidden" name="qty" value="1">
+                                            <input type="hidden" name="pdtId" value="{{ $user->data->id }}">
+                                            <input  type="hidden" name="pdtName" value="{{$user->data->name}}">
+                                            <input type="hidden" name="pdtPrice" value="{{ $user->data->totalPrice }}">
+                                        </div>
+                                        <button type="submit" class="hub-cart phub-cart btn">
+                                            <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                        </button>
+                                    </form>
+                                        
+                                </div>
+                            </div>
+                        </div>
 							@endif
 							@endif
 	                		@endforeach
@@ -698,43 +731,46 @@
 						<!-- card group  -->
 						<div class="card-group">
 							@foreach ($results->data as $user)
-	                		@if($user->gender_id == 1)
-	                		@if($user->discount > 20 || $user->discount <= 30)
+	                		@if($user->data->gender_id == 1)
+	                		@if($user->data->discount > 20 || $user->data->discount <= 30)
 
 							<!-- card size-->
-							<div class="col-lg-3 col-sm-6 p-2">
-								<div class="card product-men p-3">
-									<div class="men-thumb-item">
-										<img src="{{$user->image}}" alt="img" class="card-img-top">
-										<div class="men-cart-pro">
-											<div class="inner-men-cart-pro">
-												<a href="{{'/user/mens/' . $user->id}}" class="link-product-add-cart">Quick View</a>
-											</div>
-										</div>
-									</div>
-									<!-- card body -->
-									<div class="card-body  py-3 px-2">
-										<h5 class="card-title text-capitalize">{{$user->name}}</h5>
-										<div class="card-text d-flex justify-content-between">
-											<p class="text-dark font-weight-bold">${{ $user->totalPrice }}</p>
-											<p class="line-through">${{ $user->price }}</p>
-										</div>
-									</div>
-									<!-- card footer -->
-	                                <div class="card-footer d-flex justify-content-end">
-	                                    <form action="#" method="post">
-	                                        <input type="hidden" name="cmd" value="_cart">
-	                                        <input type="hidden" name="add" value="1">
-	                                        <input type="hidden" name="hub_item" value="{{$user->name}}">
-	                                        <input type="hidden" name="amount" value="{{ $user->totalPrice }}">
-	                                        <button type="submit" class="hub-cart phub-cart btn">
-	                                            <i class="fa fa-cart-plus" aria-hidden="true"></i>
-	                                        </button>
-	                                        <a href="#" data-toggle="modal" data-target="#myModal1"></a>
-	                                    </form>
-	                                </div>
-								</div>
-							</div>
+							<div class="col-lg-2 col-sm-6 p-2">
+                            <div class="card product-men p-3">
+                                <div class="men-thumb-item">
+                                    <img src="{{$user->data->image}}" alt="img" class="card-img-top">
+                                    <div class="men-cart-pro">
+                                        <div class="inner-men-cart-pro">
+                                            <a href="{{'/user/mens/' . $user->data->id}}" class="link-product-add-cart">Quick View</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- card body -->
+                                <div class="card-body  py-3 px-2">
+                                    <h5 class="card-title text-capitalize">{{$user->data->name}}</h5>
+                                    <div class="card-text d-flex justify-content-between">
+                                        <p class="text-dark font-weight-bold">Tk{{ $user->data->totalPrice }}</p>
+                                        <p class="line-through">Tk{{ $user->data->price }}</p>
+                                    </div>
+                                </div>
+                                <!-- card footer -->
+                                <div class="card-footer d-flex justify-content-end">
+                                    <form action="{{route('cart.add')}}" method="post">
+                                        {{csrf_field()}}
+                                        <div class="quantity">
+                                            <input  type="hidden" name="qty" value="1">
+                                            <input type="hidden" name="pdtId" value="{{ $user->data->id }}">
+                                            <input  type="hidden" name="pdtName" value="{{$user->data->name}}">
+                                            <input type="hidden" name="pdtPrice" value="{{ $user->data->totalPrice }}">
+                                        </div>
+                                        <button type="submit" class="hub-cart phub-cart btn">
+                                            <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                        </button>
+                                    </form>
+                                        
+                                </div>
+                            </div>
+                        </div>
 							@endif
 							@endif
 	                		@endforeach
