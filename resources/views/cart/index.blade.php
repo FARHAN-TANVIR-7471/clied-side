@@ -56,7 +56,7 @@
 
           <div class="float-right">
             <a href="/test" class="btn btn-success">Continue Shopping</a>
-            <a href="" class="btn btn-warning">Checkout</a>
+            <a href="{{route('checkout.index')}}" class="btn btn-warning">Checkout</a>
           </div>
     </div>        
 </div>

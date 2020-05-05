@@ -86,6 +86,10 @@ Route::get('cart','CartController@index')->name('cart.index');
 Route::post('cart/{id}','CartController@destroy')->name('cart.destroy');
 Route::post('cart/item/{id}','CartController@update')->name('cart.update');
 
+// Checkout
+Route::get('checkout','CheckoutController@index')->name('checkout.index');
+Route::post('checkout','CheckoutController@store')->name('checkout.store');
+
 Route::get('/user/menproduct/{id}','UserController@menproduct');
 Route::get('/user/womenproduct/{id}','UserController@womenproduct');
 
