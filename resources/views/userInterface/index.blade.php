@@ -128,7 +128,7 @@
                                     <img src="{{$user->data->image}}" alt="img" class="card-img-top">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
-                                            <a href="{{'/user/mens/' . $user->data->id}}" class="link-product-add-cart">Quick View</a>
+                                            <a href="{{'/user/description/' . $user->data->id}}" class="link-product-add-cart">Quick View</a>
                                         </div>
                                     </div>
                                 </div>
@@ -199,7 +199,7 @@
                                     <img src="{{$user->data->image}}" alt="img" class="card-img-top">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
-                                            <a href="{{'/user/mens/' . $user->data->id}}" class="link-product-add-cart">Quick View</a>
+                                            <a href="{{'/user/description/' . $user->data->id}}" class="link-product-add-cart">Quick View</a>
                                         </div>
                                     </div>
                                 </div>
@@ -224,8 +224,7 @@
                                         <button type="submit" class="hub-cart phub-cart btn">
                                             <i class="fa fa-cart-plus" aria-hidden="true"></i>
                                         </button>
-                                    </form>
-                                        
+                                    </form>   
                                 </div>
                             </div>
                         </div>
@@ -263,7 +262,7 @@
                                     <img src="{{$user->data->image}}" alt="img" class="card-img-top">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
-                                            <a href="{{'/user/mens/' . $user->data->id}}" class="link-product-add-cart">Quick View</a>
+                                            <a href="{{'/user/description/' . $user->data->id}}" class="link-product-add-cart">Quick View</a>
                                         </div>
                                     </div>
                                 </div>

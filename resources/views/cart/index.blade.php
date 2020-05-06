@@ -1,7 +1,7 @@
 @include('/userInterface/userlayout/header')
 @include('/userInterface/userlayout/navbar')
 
-<div class="container">
+<div class="container mb-5">
     <div class="row">
         <table class="table">
             <thead>

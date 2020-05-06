@@ -82,25 +82,17 @@
 
                     <div class="occasion-cart mt-2 mb-5">
                         <div class="">
-                            <form action="#" method="post">
+                            <form action="{{route('cart.add')}}" method="post">
                                 {{csrf_field()}}
                                 <div class="quantity">
-                                    <a href="#" class="quantity-minus">-</a>
-                                    <input title="Qty" type="text" name="quantity" class="email input-text qty text" value="1">
-                                    <a href="#" class="quantity-plus">+</a>
+                                    <input  type="hidden" name="qty" value="1">
+                                    <input type="hidden" name="pdtId" value="{{ $results->data->id }}">
+                                    <input  type="hidden" name="pdtName" value="{{$results->data->name}}">
+                                    <input type="hidden" name="pdtPrice" value="{{ $results->data->totalPrice }}">
                                 </div>
-
-                                <input type="hidden" name="pdt_id" value="{{ $results->data->id }}">
-
-                                <input type="hidden" name="name" value="{{$results->data->name}}">
-
-                                <input type="hidden" name="amount" value="{{ $results->data->totalPrice }}">
-
-                                <input type="hidden" name="image" value="{{$results->data->image}}">
-
-                                <button class="hub-cart phub-cart btn">
-                                            <i class="fa fa-cart-plus" aria-hidden="true"></i>
-                                        </button>
+                                <button type="submit" class="hub-cart phub-cart btn">
+                                    <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                </button>
                             </form>
                             <!-- <form action="#" method="post">
                                         <input type="hidden" name="cmd" value="_cart">

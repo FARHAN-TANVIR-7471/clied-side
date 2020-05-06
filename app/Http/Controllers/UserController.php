@@ -75,14 +75,14 @@ class UserController extends Controller
     } 
 
     /*mens*/
-    public function mens($id){
+    public function productDescription($id){
 
         $response = Http::get("http://127.0.0.1:8081/api/products/$id");
         $results = json_decode($response);
         $totalproduct = $results->totalproduct;
         // dd($totalproduct);
 
-    	return view('userInterface.mens',compact('results','totalproduct')); 
+    	return view('userInterface.productDescription',compact('results','totalproduct')); 
     }
 
         /*Women*/

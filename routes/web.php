@@ -69,7 +69,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/user/men','UserController@men');
 Route::get('/user/women','UserController@women');
-Route::get('/user/mens/{id}','UserController@mens');
+Route::get('/user/description/{id}','UserController@productDescription');
 Route::get('/user/about','UserController@about');
 Route::get('/user/contact','UserController@contact');
 Route::post('user-contact','UserController@usercontact');
