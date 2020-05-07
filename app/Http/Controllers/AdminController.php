@@ -46,20 +46,6 @@ class AdminController extends Controller
         $file->move($destinationPath,$file->getClientOriginalName());
 
 
-        /*$data = array('name'=>$brand,
-                      'price'=>$price,
-                      'discount'=>$discount, 
-                      'gender_id'=>$gender, 
-                      'product_type_id'=>$product_type,  
-                      'custom'=>$custom, 
-                      'number'=>$number, 
-                      'size'=>$size,
-                      'description'=>$description,
-                      'image'=>$image,
-                      'color'=>$color);*/
-        //$data = json_encode($data);
-        //dd($data);
-
         $response = Http::post('http://127.0.0.1:8081/api/products/',[
                       'name'=>$brand,
                       'price'=>$price,
@@ -76,31 +62,16 @@ class AdminController extends Controller
 
         return $response ->json();
         //dd($response);
+    }
 
+    /*Product Controller*/
+    public function order(){
 
+        $response = Http::get("http://127.0.0.1:8081/api/order");
+        $results = json_decode($response);
+        dd($results);
 
-        //$data = array('brand'=>$brand,'gender_category_id'=>$gender, 'product_type_id'=>$product_type, 'price'=>$price, 'discount'=>$discount,  'color'=>$color, 'season'=>$season, 'trend'=>$trend,'image'=>$image);
-        //dd($data);
-
-        /*$response = Http::asForm()->post('http://127.0.0.1:8081/api/products/', [
-            //'name' => 'Steve',
-            //'role' => 'Network Administrator',
-            'name' => $brand,
-            'price' => $price,
-            'discount' => $discount,
-            'gender_id' => $gender,
-            'product_type_id' => $product_type,
-            'custom' => $custom,
-            'number' => $number,
-            'size' => $size,
-            'description' => $description,
-            'image' => $image,
-            'color' => $color
-        ]);*/
-        //dd($response);
-
-        //DB::table('product')->insert($data);
-        //return redirect('/admin/product');
+        //return view('admin.product',  compact('results')); 
     }
 
 

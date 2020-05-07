@@ -59,6 +59,9 @@ Route::group(['middleware' => ['auth', 'admin']], function(){
 	/*product type insert*/
 	Route::post('/insert','AdminController@producttypeinsert');
 
+	/*Order*/
+	Route::get('/admin/order','AdminController@order');
+
 	/*product_type Edit*/
 	Route::get('/edit/producttype/{id}','AdminController@editProductType');
 	Route::post('/update/producttype/{id}','AdminController@updateProductType');
