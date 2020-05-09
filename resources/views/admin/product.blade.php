@@ -54,19 +54,18 @@
                                             @foreach ($results->data as $user)
                                             
                                                 <tr>
-                                                    <td>{{ $user->id }}</td>
-                                                    <td>{{ $user->name }}</td>
-                                                    <td>{{ $user->gender_id }}</td>
-                                                    <td>{{ $user->price }}</td>
-                                                    <td>{{ $user->discount }}%</td>
-                                                    <td>{{ $user->totalPrice }}</td>
-                                                    
-                                                    <td>{{ $user->color }}</td>
-                                                    <td>{{ $user->size }}</td>
+                                                    <td>{{ $user->data->id }}</td>
+                                                    <td>{{ $user->data->name }}</td>
+                                                    <td>{{ $user->data->gender_id }}</td>
+                                                    <td>{{ $user->data->price }}</td>
+                                                    <td>{{ $user->data->discount }}%</td>
+                                                    <td>{{ $user->data->totalPrice }}</td>
+                                                    <td>{{ $user->data->color }}</td>
+                                                    <td>{{ $user->data->size }}</td>
                                                     <td>a</td>
                                                     <td>B</td>
                                                     <td>
-                                                        <img style="width: 50%; height:15%" src="{{ $user->image }}">
+                                                        <img style="width: 50%; height:15%" src="{{ $user->data->image }}">
                                                     </td>
                                                     <td>
                                                         <a href="#" class="view" title="View" data-toggle="tooltip"><i style="color: #03A9F4" class="material-icons">&#xE417;</i></a>
@@ -121,7 +120,20 @@
                                             {{csrf_field()}}
                                             <label for="exampleFormControlSelect1">Product Type</label>
 
-                                            <input type="text" name="product_type" class="form-control" placeholder="Product type">
+                                            <select name="product_type" class="form-control">
+                                                <option value="1">T-Shirts</option>
+                                                <option value="2">Shirts</option>
+                                                <option value="3">Panjabi</option>
+                                                <option value="4">Plo Shirts</option>
+                                                <option value="5">Jeans</option>
+                                                <option value="6">Pant</option>
+                                                <option value="7">Traditional Clothing</option>
+                                                <option value="8">Saree</option>
+                                                <option value="9">Shalwar Kameez</option>
+                                                <option value="10">Kurtis</option>
+                                                <option value="11">Chothing</option>
+                                                <option value="12">Women Bags</option>                                                      
+                                            </select>
                                             
                                         </div>
                                         <div class="form-group col-md-3">
@@ -166,26 +178,13 @@
                                             <!-- <input type="text" name="season" class="form-control" id="exampleFormControlInput1" placeholder="Season"> -->
                                             <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                                         </div>
-                                        <!-- <div class="form-group col-md-6">
-                                        {{csrf_field()}}
-                                            <label for="exampleFormControlInput1">Trend: </label>
-                                          
-
-                                            <select name="trend" class="form-control" id="exampleFormControlSelect1">
-                                                <option value="yes">Yes</option>
-                                                <option value="no">No</option>
-                                                                      
-                                            </select>
-
-                                            
-                                        </div> -->
                                     </div>
                                     <div class="form-row">
-                                    <div class="form-group" {{ $errors->has('image') ? 'has-error' : '' }}>
-                                    <label for="image">Image : </label>
-                                    <input type="file" name="image" id="image" class="form-control">
-                                    <span class="text-danger"> {{ $errors->first('image') }}</span>
-                                    </div>
+                                        <div class="form-group" {{ $errors->has('image') ? 'has-error' : '' }}>
+                                            <label for="image">Image : </label>
+                                            <input type="file" name="image" id="image" class="form-control">
+                                            <span class="text-danger"> {{ $errors->first('image') }}</span>
+                                        </div>
                                     </div>
 
                                     <button type="submit" class="btn btn-primary">Submit</button>

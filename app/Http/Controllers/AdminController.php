@@ -40,7 +40,7 @@ class AdminController extends Controller
         $size =$request->input('size');
         $description =$request->input('description');
         $image ='/images/'.$file->getClientOriginalName();
-        dd($image);
+        //dd($image);
 
         $destinationPath = 'images/';
         $file->move($destinationPath,$file->getClientOriginalName());
