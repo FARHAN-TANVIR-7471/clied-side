@@ -20,9 +20,12 @@ Route::get('/', function () {
 });*/
 Route::get('/test','UserController@userHome');
 
-Route::get('/admin/login', function () {
-    return view('admin.login');
-});
+/* Admin login get*/
+Route::get('admin/login','AdminController@login');
+
+/* Admin login post*/
+Route::post('/adminlogin','AdminController@adminLogin');
+
 Route::get('/admin/register', function () {
     return view('admin.register');
 });
@@ -30,49 +33,54 @@ Route::get('/admin/password', function () {
     return view('admin.password');
 });
 
-Auth::routes();
+Route::get('/dashboard', function () {
+	return view('admin.index');
+});
+
+
+/*Admin start*/
+/*Product*/
+Route::get('/admin/product','AdminController@product');
+
+/*product insert*/
+Route::post('/productinsert','AdminController@productinsert');
+//Route::get('/productinsert','AdminController@productinsert');
+
+/*others*/
+Route::get('/admin/others','AdminController@others');
+
+/*gender*/
+Route::get('/admin/gender','AdminController@gender');
+
+
+/*product_type*/
+Route::get('/admin/product-type','AdminController@productType');
+
+/*product type insert*/
+//Route::post('/insert','AdminController@producttypeinsert');
+
+/*Order*/
+Route::get('/admin/order','AdminController@order');
+
+/*product_type Edit*/
+Route::get('/edit/producttype/{id}','AdminController@editProductType');
+Route::post('/update/producttype/{id}','AdminController@updateProductType');
+
+/*Auth::routes();
 
 Route::group(['middleware' => ['auth', 'admin']], function(){
-	Route::get('/dashboard', function () {
-    	return view('admin.index');
-	});
+	
 
-	/*Product*/
-	Route::get('/admin/product','AdminController@product');
-
-	/*product insert*/
-	Route::post('/productinsert','AdminController@productinsert');
-	//Route::get('/productinsert','AdminController@productinsert');
-
-	/*others*/
-	Route::get('/admin/others','AdminController@others');
-
-	/*gender*/
-	Route::get('/admin/gender','AdminController@gender');
-
-	/*cart*/
-	Route::get('/admin/cart','AdminController@cart');
-
-	/*product_type*/
-	Route::get('/admin/product-type','AdminController@productType');
-
-	/*product type insert*/
-	Route::post('/insert','AdminController@producttypeinsert');
-
-	/*Order*/
-	Route::get('/admin/order','AdminController@order');
-
-	/*product_type Edit*/
-	Route::get('/edit/producttype/{id}','AdminController@editProductType');
-	Route::post('/update/producttype/{id}','AdminController@updateProductType');
-
-});
+});*/
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/user/men','UserController@men');
 Route::get('/user/women','UserController@women');
 Route::get('/user/description/{id}','UserController@productDescription');
+Route::get('/user/custom','UserController@custom');
+Route::get('/user/mancustom','UserController@mancustom');
+Route::get('/user/womencustom','UserController@womencustom');
 Route::get('/user/about','UserController@about');
 Route::get('/user/contact','UserController@contact');
 Route::post('user-contact','UserController@usercontact');

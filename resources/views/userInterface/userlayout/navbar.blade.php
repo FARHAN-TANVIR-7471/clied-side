@@ -49,19 +49,7 @@
                     </form>
                     <!-- search form -->
                     <div class="nav-icon d-flex">
-                        <!-- sigin and sign up -->
-                        <!-- <a class="text-dark login_btn align-self-center mx-3" href="{{url('/admin/login')}}" data-toggle="modal" data-target="#myModal_btn">
-                            <i class="far fa-user"></i>
-                        </a> -->
-
-                        <a class="text-dark login_btn align-self-center mx-3" href="{{ route('login')}}">
-                            <i class="far fa-user"></i> Login
-                        </a>
-
-                        <!-- <a class="text-dark login_btn align-self-center mx-3" href="{{ route('register')}}">
-                            <i class="far fa-user"></i> Reg
-                        </a> -->
-                        <!-- sigin and sign up -->
+                        
                         <!-- shopping cart -->
                         <div class="cart-mainf">
                             <div class="hubcart hubcart2 cart cart box_1">    
@@ -154,48 +142,26 @@
                                 </div>
                             </div>
                         </li>
-                        <!-- <li class="nav-item dropdown has-mega-menu" style="position:static;">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Kids Clothing</a>
+                        <li class="nav-item dropdown has-mega-menu" style="position:static;">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Custom clothing</a>
                             <div class="dropdown-menu" style="width:100%">
-                                <div class="container">
-                                    <div class="row w3_kids  py-3">
-                                        <div class="col-md-3 ">
-                                            <span class="bg-light">Boy's Clothing</span>
-                                            <a class="dropdown-item" href="boys.html">T-Shirts</a>
-                                            <a class="dropdown-item" href="boys.html">Coats</a>
-                                            <a class="dropdown-item" href="boys.html">Shirts</a>
-                                            <a class="dropdown-item" href="boys.html">Suits & Blazers</a>
-                                            <a class="dropdown-item" href="boys.html">Jackets</a>
-                                            <a class="dropdown-item" href="boys.html">Trousers</a>
+                                <div class="px-0 container">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <a class="dropdown-item" href="{{url('/user/menproduct/3')}}">Custom clothing</a>
                                         </div>
-                                        <div class="col-md-3">
-                                            <a class="dropdown-item mt-4" href="boys.html">T-Shirts</a>
-                                            <a class="dropdown-item" href="boys.html">Coats</a>
-                                            <a class="dropdown-item" href="boys.html">Shirts</a>
-                                            <a class="dropdown-item" href="boys.html">Suits & Blazers</a>
-                                            <a class="dropdown-item" href="boys.html">Jackets</a>
-                                            <a class="dropdown-item" href="boys.html">Trousers</a>
+                                        <div class="col-md-4">
+                                            <a class="dropdown-item" href="{{url('/user/men')}}">Man custom clothing</a>
+                                            
                                         </div>
-                                        <div class="col-md-3">
-                                            <span>Girl's Clothing</span>
-                                            <a class="dropdown-item" href="girls.html">T-shirts</a>
-                                            <a class="dropdown-item" href="girls.html">Dresses</a>
-                                            <a class="dropdown-item" href="girls.html">Tunics</a>
-                                            <a class="dropdown-item" href="girls.html">Skirts</a>
-                                            <a class="dropdown-item" href="girls.html">Jeans</a>
-                                            <a class="dropdown-item" href="girls.html">Midi</a>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <a class="dropdown-item  mt-4" href="girls.html">Tunics</a>
-                                            <a class="dropdown-item" href="girls.html">Skirts</a>
-                                            <a class="dropdown-item" href="girls.html">T-shirts</a>
-                                            <a class="dropdown-item" href="girls.html">Dresses</a>
-                                            <a class="dropdown-item" href="girls.html">Jeans</a>
+                                        <div class="col-md-4">
+                                            <a class="dropdown-item" href="{{url('/user/menproduct/3')}}">Women custom clothing</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </li> -->
+                        </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('/user/about')}}">About</a>
                         </li>

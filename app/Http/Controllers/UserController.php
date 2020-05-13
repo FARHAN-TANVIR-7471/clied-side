@@ -92,9 +92,40 @@ class UserController extends Controller
         $results = json_decode($response);
         $totalproduct = $results->data[0]->totalproduct;
 
-        //dd($results);
-
         return view('userInterface.women',compact('results','totalproduct')); 
+    }
+
+    /*custom Controller*/
+    public function custom(){
+
+        $response = Http::get('http://127.0.0.1:8081/api/products/');
+        $results = json_decode($response);
+
+        $totalproduct = $results->data[0]->totalproduct;
+
+        return view('userInterface.customProduct',compact('results','totalproduct'));
+    }
+
+    /*man custom Controller*/
+    public function mancustom(){
+
+        $response = Http::get('http://127.0.0.1:8081/api/products/');
+        $results = json_decode($response);
+
+        $totalproduct = $results->data[0]->totalproduct;
+
+        return view('userInterface.manCustomProduct',compact('results','totalproduct'));
+    }
+
+    /*women custom Controller*/
+    public function womencustom(){
+
+        $response = Http::get('http://127.0.0.1:8081/api/products/');
+        $results = json_decode($response);
+
+        $totalproduct = $results->data[0]->totalproduct;
+
+        return view('userInterface.womenCustomProduct',compact('results','totalproduct'));
     }
 
     /*about*/

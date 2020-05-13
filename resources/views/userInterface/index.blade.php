@@ -79,15 +79,12 @@
     
     <!-- about -->
     <div class="row no-gutters pb-5">
-        <div class="col-md-6">
-            
-        </div>
         <div class="col-sm-3 d-flex justify-content-center">
             <div class="hovereffect w-100">
                 <img class="w-100" src="images/a1.jpg" alt="">
                 <div class="overlay">
                     <h5>women's fashion</h5>
-                    <a class="info" href="women.html">Shop Now</a>
+                    <a class="info" href="{{url('/user/women')}}">Shop Now</a>
                 </div>
             </div>
         </div>
@@ -96,6 +93,24 @@
                 <img class="w-100" src="images/a2.jpg" alt="">
                 <div class="overlay">
                     <h5>men's fashion</h5>
+                    <a class="info" href="{{url('/user/men')}}">Shop Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 d-flex justify-content-center">
+            <div class="hovereffect w-100">
+                <img class="w-100" src="images/a1.jpg" alt="">
+                <div class="overlay">
+                    <h5>women's custom product</h5>
+                    <a class="info" href="women.html">Shop Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 d-flex justify-content-center">
+            <div class="hovereffect w-100">
+                <img class="w-100" src="images/a2.jpg" alt="">
+                <div class="overlay">
+                    <h5>men's custom product</h5>
                     <a class="info" href="men.html">Shop Now</a>
                 </div>
             </div>
@@ -302,5 +317,4 @@
                 </div>
     </section>  
     
-    
-    @include('/userInterface/userlayout/footer')
+@include('/userInterface/userlayout/footer')

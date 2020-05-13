@@ -8,10 +8,37 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Client\Response;
+use Session;
 
 
 class AdminController extends Controller
 {
+    /*login get request*/
+    public function login(){
+        return view('admin.login');
+    }
+
+    /*login post request*/
+    public function adminLogin(Request $request){
+        $user = $request->input('user');
+        $password = $request->input('password');
+        //dd($password);
+        $response = Http::post('http://127.0.0.1:8081/api/login',[
+                      'email'=>$user,
+                      'password'=>$password
+        ]); 
+        //dd($response);
+        $staCode = $response->status(); 
+
+        if($staCode == 200){
+            return redirect('/dashboard');
+        }
+        else {
+            return back()->with('error', 'Wrong Login Details');
+        }
+        //return redirect('/dashboard');
+    }
+
     /*Product Controller*/
     public function product(){
 
@@ -26,7 +53,6 @@ class AdminController extends Controller
 
     public function productinsert(Request $request){
         //dd($request);
-        
         $file = $request->file('image');
 
         $brand = $request->input('brand');
@@ -45,7 +71,6 @@ class AdminController extends Controller
         $destinationPath = 'images/';
         $file->move($destinationPath,$file->getClientOriginalName());
 
-
         $response = Http::post('http://127.0.0.1:8081/api/products/',[
                       'name'=>$brand,
                       'price'=>$price,
@@ -59,9 +84,8 @@ class AdminController extends Controller
                       'image'=>$image,
                       'color'=>$color
         ]);      
-
-        return $response ->json();
         //dd($response);
+        return $response ->json();
     }
 
     /*Product Controller*/
