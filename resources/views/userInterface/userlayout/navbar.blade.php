@@ -148,14 +148,14 @@
                                 <div class="px-0 container">
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <a class="dropdown-item" href="{{url('/user/menproduct/3')}}">Custom clothing</a>
+                                            <a class="dropdown-item" href="{{url('/user/custom')}}">Custom clothing</a>
                                         </div>
                                         <div class="col-md-4">
-                                            <a class="dropdown-item" href="{{url('/user/men')}}">Man custom clothing</a>
+                                            <a class="dropdown-item" href="{{url('/user/mancustom')}}">Man custom clothing</a>
                                             
                                         </div>
                                         <div class="col-md-4">
-                                            <a class="dropdown-item" href="{{url('/user/menproduct/3')}}">Women custom clothing</a>
+                                            <a class="dropdown-item" href="{{url('/user/womencustom')}}">Women custom clothing</a>
                                         </div>
                                     </div>
                                 </div>
