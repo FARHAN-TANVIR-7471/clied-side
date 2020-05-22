@@ -61,6 +61,8 @@ Route::get('/admin/product-type','AdminController@productType');
 
 /*Order*/
 Route::get('/admin/order','AdminController@order');
+/*contact*/
+Route::get('/admin/contact','AdminController@contact');
 
 /*product_type Edit*/
 Route::get('/edit/producttype/{id}','AdminController@editProductType');
@@ -84,6 +86,10 @@ Route::get('/user/womencustom','UserController@womencustom');
 Route::get('/user/about','UserController@about');
 Route::get('/user/contact','UserController@contact');
 Route::post('user-contact','UserController@usercontact');
+
+Route::post('searchproduct','UserController@searchproduct');
+Route::get('/user/search','UserController@searchpage');
+//Route::view('Serch view','userInterface.search')->name('Serch view');
 
 //Route::get('cart','ShoppingController@cart');
 

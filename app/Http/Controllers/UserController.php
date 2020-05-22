@@ -39,13 +39,7 @@ class UserController extends Controller
     /*menproduct*/
     public function menproduct($id){
 
-        //echo $id;
-
         $data['product_type'] = $id;
-
-        //return view('userInterface.manproduct',$data);
-
-        //dd($id);
 
         $response = Http::get('http://127.0.0.1:8081/api/products/');
         $results = json_decode($response);
@@ -57,14 +51,9 @@ class UserController extends Controller
 
     /*womenproduct*/
     public function womenproduct($id){
-
         //echo $id;
 
         $data['product_type'] = $id;
-
-        //return view('userInterface.manproduct',$data);
-
-        //dd($id);
 
         $response = Http::get('http://127.0.0.1:8081/api/products/');
         $results = json_decode($response);
@@ -127,29 +116,61 @@ class UserController extends Controller
 
         return view('userInterface.womenCustomProduct',compact('results','totalproduct'));
     }
+    /*searchproduct*/
+    public function searchproduct(Request $request){
+        
+        $product_type = $request->category;
+        $data['product_type'] = $product_type;
+        //dd($data);
+        $response = Http::get('http://127.0.0.1:8081/api/products/');
+        $results = json_decode($response);
+        $totalproduct = $results->data[0]->totalproduct;
 
+        return view('userInterface.search',compact('results','totalproduct'),$data); 
+        //return redirect('/user/search')->with(compact('results','totalproduct'),$data);
+    }
+    /*searchpage*/
+    public function searchpage(){
+        /*$response = Http::get('http://127.0.0.1:8081/api/products/');
+        $results = json_decode($response);
+        $totalproduct = $results->data[0]->totalproduct;
+
+        return view('userInterface.search',compact('results','totalproduct'));*/ 
+        return view('userInterface.search'); 
+    }
     /*about*/
     public function about(){
+        $response = Http::get('http://127.0.0.1:8081/api/products/');
+        $results = json_decode($response);
+        $totalproduct = $results->data[0]->totalproduct;
 
-        return view('userInterface.about'); 
+        return view('userInterface.about',compact('totalproduct')); 
     }
 
     /*contact*/
     public function contact(){
+        $response = Http::get('http://127.0.0.1:8081/api/products/');
+        $results = json_decode($response);
+        $totalproduct = $results->data[0]->totalproduct;
 
-        return view('userInterface.contact'); 
+        return view('userInterface.contact',compact('totalproduct')); 
     }
 
     public function usercontact(Request $request){
 
         $contactusername = $request->input('contactusername');
         $contactemail = $request->input('contactemail');
+        $contactnumber = $request->input('contactnumber');
         $contactcomment = $request->input('contactcomment');
 
-        $data = array('name'=>$contactusername, 'email'=>$contactemail, 'message'=>$contactcomment);
-        DB::table('contact')->insert($data);
-
-        return redirect('/user/contact');
+        $response = Http::post('http://127.0.0.1:8081/api/contructinsert/',[
+                      'name'=>$contactusername,
+                      'email'=>$contactemail,
+                      'phone'=>$contactnumber, 
+                      'message'=>$contactcomment 
+        ]);      
+        
+        return back();
     }
     
 }

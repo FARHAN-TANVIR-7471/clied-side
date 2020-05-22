@@ -38,6 +38,10 @@
                                 <input type="email" class="form-control" id="contactemail" name="contactemail" required>
                             </div>
                             <div class="form-group">
+                                <label for="contactemail">Phone Number</label>
+                                <input type="text" class="form-control" id="contactemail" name="contactnumber" required>
+                            </div>
+                            <div class="form-group">
                                 <label for="contactcomment">Your Message</label>
                                 <textarea class="form-control" rows="5" id="contactcomment" name="contactcomment" required></textarea>
                             </div>

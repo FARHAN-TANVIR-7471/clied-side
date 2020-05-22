@@ -1,23 +1,6 @@
 @include('/userInterface/userlayout/header')
 @include('/userInterface/userlayout/navbar')
 
-<!-- inner banner -->
-<div class="ibanner_w3 pt-sm-5 pt-3">
-    <h4 class="head_agileinfo text-center text-capitalize text-center pt-5">
-        <span>f</span>ashion
-        <span>h</span>ub</h4>
-</div>
-<!-- //inner banner -->
-<!-- breadcrumbs -->
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-            <a href="index.html">Home</a>
-        </li>
-        <li class="breadcrumb-item active" aria-current="page">Custom Clothing</li>
-    </ol>
-</nav>
-<!-- //breadcrumbs -->
 <section class="tabs_pro py-md-5 pt-sm-3 pb-5">
     <h5 class="head_agileinfo text-center text-capitalize pb-5">
         <span>Custom </span> Products</h5>
@@ -32,7 +15,9 @@
             <div class="col-lg-2 col-sm-6 p-2">
                 <div class="card product-men p-3">
                     <div class="men-thumb-item">
-                        <img src="{{$user->data->image}}" alt="img" class="card-img-top">
+                        <div class="example example-cover">
+                            <img src="{{$user->data->image}}" alt="img" class="card-img-top w-100 img-responsiv">
+                        </div>
                         <div class="men-cart-pro">
                             <div class="inner-men-cart-pro">
                                 <a href="{{'/user/description/' . $user->data->id}}" class="link-product-add-cart">Quick View</a>

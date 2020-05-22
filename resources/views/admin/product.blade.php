@@ -20,7 +20,7 @@
                             <thead>
                                 <tr>
                                     <th>Id</th>
-                                    <th>Brands</th>
+                                    <th>Name</th>
                                     <th>Gender</th>
                                     <th>Product Type</th>
                                     <th>Price</th>
@@ -35,7 +35,7 @@
                             <tfoot>
                                 <tr>
                                     <th>Id</th>
-                                    <th>Brands</th>
+                                    <th>Name</th>
                                     <th>Gender</th>
                                     <th>Product Type</th>
                                     <th>Price</th>

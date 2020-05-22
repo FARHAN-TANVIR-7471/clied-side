@@ -31,7 +31,7 @@ class ShoppingController extends Controller
 			'product_id' => request()->pdtId,
 			'product_quantity' => request()->qty,
 		]);
-		return back();
+		return redirect('/test');
 	}
 	
 	

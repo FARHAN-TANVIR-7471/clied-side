@@ -22,12 +22,12 @@ class AdminController extends Controller
     public function adminLogin(Request $request){
         $user = $request->input('user');
         $password = $request->input('password');
-        //dd($password);
+        
         $response = Http::post('http://127.0.0.1:8081/api/login',[
                       'email'=>$user,
                       'password'=>$password
         ]); 
-        //dd($response);
+        
         $staCode = $response->status(); 
 
         if($staCode == 200){
@@ -71,7 +71,7 @@ class AdminController extends Controller
         $destinationPath = 'images/';
         $file->move($destinationPath,$file->getClientOriginalName());
 
-        $response = Http::post('http://127.0.0.1:8081/api/products/',[
+        $response = Http::post('http://127.0.0.1:8081/api/productadd/',[
                       'name'=>$brand,
                       'price'=>$price,
                       'discount'=>$discount, 
@@ -84,8 +84,7 @@ class AdminController extends Controller
                       'image'=>$image,
                       'color'=>$color
         ]);      
-        //dd($response);
-        return $response ->json();
+        return back();
     }
 
     /*Product Controller*/
@@ -93,9 +92,17 @@ class AdminController extends Controller
 
         $response = Http::get("http://127.0.0.1:8081/api/order");
         $results = json_decode($response);
-        dd($results);
+        
+        return view('admin.order', compact('results'));  
+    }
 
-        //return view('admin.product',  compact('results')); 
+    /*Product Controller*/
+    public function contact(){
+
+        $response = Http::get("http://127.0.0.1:8081/api/contruct");
+        $results = json_decode($response);
+        
+        return view('admin.contact', compact('results'));  
     }
 
 
@@ -105,9 +112,7 @@ class AdminController extends Controller
 
     public function gender(){
 
-        $gender = DB::table('gender_category')->get();
-
-    	return view('admin.gender', ['gender' => $gender]); 
+    	return view('admin.gender'); 
     } 
 
     public function cart(){
