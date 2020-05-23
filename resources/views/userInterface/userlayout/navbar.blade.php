@@ -5,7 +5,8 @@
         <nav class="top_nav d-flex pt-3 pb-1">
             <!-- logo -->
             <h1>
-                <a class="navbar-brand" href="{{url('/test')}}">fh
+                <a class="navbar-brand" href="{{url('/test')}}">
+                    <img style="width: 55px; height: 55px" src="images/logo.png">
                 </a>
             </h1>
             <!-- //logo -->

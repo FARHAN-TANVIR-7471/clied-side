@@ -87,13 +87,24 @@ class AdminController extends Controller
         return back();
     }
 
-    /*Product Controller*/
+    /*Order*/
     public function order(){
 
         $response = Http::get("http://127.0.0.1:8081/api/order");
         $results = json_decode($response);
         
         return view('admin.order', compact('results'));  
+    }
+
+        /*order details*/
+    public function orderdetails($id){
+
+        $data['order_id'] = $id;
+
+        $response = Http::get("http://127.0.0.1:8081/api/order");
+        $results = json_decode($response);
+
+        return view('admin.orderDetails',compact('results'),$data); 
     }
 
     /*Product Controller*/

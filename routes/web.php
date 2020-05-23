@@ -52,7 +52,6 @@ Route::get('/admin/others','AdminController@others');
 /*gender*/
 Route::get('/admin/gender','AdminController@gender');
 
-
 /*product_type*/
 Route::get('/admin/product-type','AdminController@productType');
 
@@ -61,6 +60,8 @@ Route::get('/admin/product-type','AdminController@productType');
 
 /*Order*/
 Route::get('/admin/order','AdminController@order');
+/*Order details*/
+Route::get('/admin/orderdetails/{id}','AdminController@orderdetails');
 /*contact*/
 Route::get('/admin/contact','AdminController@contact');
 

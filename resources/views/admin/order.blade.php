@@ -20,8 +20,6 @@
                                     <th>phone</th>
                                     <th>address</th>
                                     <th>Action</th>
-                                    <!-- <th>product_quantity</th>
-                                    <th>otal_amount</th> -->
                                 </tr>
                             </thead>
                             <tfoot>
@@ -32,8 +30,6 @@
                                     <th>phone</th>
                                     <th>address</th>
                                     <th>Action</th>
-                                    <!-- <th>product_quantity</th>
-                                    <th>otal_amount</th> -->
                                 </tr>
                             </tfoot>
                             <tbody>
@@ -44,7 +40,7 @@
                                        <td>{{$order->email}}</td>
                                        <td>{{$order->phone}}</td>
                                        <td>{{$order->address}}</td>
-                                       <td>Action</td>
+                                       <td class="font-weight-bold"><a href="{{url('/admin/orderdetails/' . $order->id)}}">Details</a></td>
                                    </tr>
                                    @endforeach     
                             </tbody>

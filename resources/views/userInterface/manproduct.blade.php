@@ -1,5 +1,4 @@
 
-<p>Product Id: {{$product_type}}</p> 
 @include('/userInterface/userlayout/header')
 @include('/userInterface/userlayout/navbar')
 

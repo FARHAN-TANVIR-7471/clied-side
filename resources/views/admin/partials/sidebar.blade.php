@@ -18,8 +18,8 @@
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="{{url('/admin/product')}}">Product</a>
                         <a class="nav-link" href="{{url('admin/order')}}">Order</a>
+                        <a class="nav-link" href="{{url('admin/contact')}}">Contact</a>
                         <a class="nav-link" href="{{url('/admin/gender')}}">Gender</a>
-                        
                         <a class="nav-link" href="{{url('/admin/product-type')}}">Product Type</a>
                         <!-- <a class="nav-link" href="{{URL::asset('layout-static')}}">Static Navigation</a>
                         <a class="nav-link" href="{{URL::asset('layout-sidenav-light')}}">Light Sidenav</a> -->
@@ -30,28 +30,6 @@
                     Pages
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
                 ></a>
-                <!-- <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
-                    <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth"
-                            >Authentication
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
-                        ></a>
-                        <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
-                            <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="{{url('/admin/product')}}">Product</a>
-                                <a class="nav-link" href="{{url('/admin/register')}}">Register</a>
-                                <a class="nav-link" href="{{url('/admin/password')}}">Forgot Password</a>
-                            </nav>
-                        </div>
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError"
-                            >Error
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
-                        ></a>
-                        <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
-                            <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="{{URL::asset('401')}}">401 Page</a><a class="nav-link" href="{{URL::asset('404')}}">404 Page</a><a class="nav-link" href="{{URL::asset('500')}}">500 Page</a></nav>
-                        </div>
-                    </nav>
-                </div> -->
                 <div class="sb-sidenav-menu-heading">Addons</div>
                 <a class="nav-link" href="{{URL::asset('charts')}}"
                     ><div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
