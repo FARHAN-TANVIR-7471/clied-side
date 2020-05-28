@@ -25,7 +25,9 @@
             <div class="col-lg-2 col-sm-6 p-2">
                 <div class="card product-men p-3">
                     <div class="men-thumb-item">
-                        <img src="{{$user->data->image}}" alt="img" class="card-img-top">
+                        <div class="example example-cover example-sm example-cover-sm">
+                            <img src="{{$user->data->image}}" alt="img" class="card-img-top w-100 img-responsiv">
+                        </div>
                         <div class="men-cart-pro">
                             <div class="inner-men-cart-pro">
                                 <a href="{{'/user/description/' . $user->data->id}}" class="link-product-add-cart">Quick View</a>

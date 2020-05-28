@@ -15,8 +15,6 @@
         <p><samp class="font-weight-bold mr-2">Phone:</samp>{{$order->phone}}</p>
         <p><samp class="font-weight-bold mr-2">Address:</samp>{{$order->address}}</p>
 
-       
-
         <div class="container pb-2">
             <div class="row">
                 <table class="table">

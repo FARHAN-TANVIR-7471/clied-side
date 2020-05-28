@@ -77,7 +77,7 @@
         <div class="col-lg-2 col-sm-6 p-2">
             <div class="card product-men p-3">
                 <div class="men-thumb-item">
-                    <div class="example example-cover">
+                    <div class="example example-cover example-sm example-cover-sm">
                         <img src="{{$user->data->image}}" alt="img" class="card-img-top w-100 img-responsiv">
                     </div>
                     
@@ -91,8 +91,8 @@
                 <div class="card-body  py-3 px-2">
                     <h5 class="card-title text-capitalize">{{$user->data->name}}</h5>
                     <div class="card-text d-flex justify-content-between">
-                        <p class="text-dark font-weight-bold">${{ $user->data->totalPrice }}</p>
-                        <p class="line-through">${{ $user->data->price }}</p>
+                        <p class="text-dark font-weight-bold">৳{{ $user->data->totalPrice }}</p>
+                        <p class="line-through">৳{{ $user->data->price }}</p>
                     </div>
                 </div>
                 <!-- card footer -->
@@ -151,7 +151,7 @@
             <div class="col-lg-2 col-sm-6 p-2">
                 <div class="card product-men p-3">
                     <div class="men-thumb-item">
-                        <div class="example example-cover">
+                        <div class="example example-cover example-sm example-cover-sm">
                             <img src="{{$user->data->image}}" alt="img" class="card-img-top w-100 img-responsiv">
                         </div>
                         <div class="men-cart-pro">
@@ -164,8 +164,8 @@
                     <div class="card-body  py-3 px-2">
                         <h5 class="card-title text-capitalize">{{$user->data->name}}</h5>
                         <div class="card-text d-flex justify-content-between">
-                            <p class="text-dark font-weight-bold">${{ $user->data->totalPrice }}</p>
-                            <p class="line-through">${{ $user->data->price }}</p>
+                            <p class="text-dark font-weight-bold">৳{{ $user->data->totalPrice }}</p>
+                            <p class="line-through">৳{{ $user->data->price }}</p>
                         </div>
                     </div>
                     <!-- card footer -->
@@ -211,12 +211,11 @@
             <?php
                 $count++
             ?>
-
             <!-- card -->
             <div class="col-lg-2 col-sm-6 p-2">
                 <div class="card product-men p-3">
                     <div class="men-thumb-item">
-                        <div class="example example-cover">
+                        <div class="example example-cover example-sm example-cover-sm">
                             <img src="{{$user->data->image}}" alt="img" class="card-img-top w-100 img-responsiv">
                         </div>
                         <div class="men-cart-pro">
@@ -229,8 +228,8 @@
                     <div class="card-body  py-3 px-2">
                         <h5 class="card-title text-capitalize">{{$user->data->name}}</h5>
                         <div class="card-text d-flex justify-content-between">
-                            <p class="text-dark font-weight-bold">Tk{{ $user->data->totalPrice }}</p>
-                            <p class="line-through">Tk{{ $user->data->price }}</p>
+                            <p class="text-dark font-weight-bold">৳{{ $user->data->totalPrice }}</p>
+                            <p class="line-through">৳{{ $user->data->price }}</p>
                         </div>
                     </div>
                     <!-- card footer -->

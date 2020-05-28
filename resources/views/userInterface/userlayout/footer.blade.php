@@ -7,7 +7,7 @@
                 <div class="container-fluid">
                     <div class="row  footer-v2grids w3-agileits">
                         <!-- services -->
-                        <div class="col-lg-3 col-sm-6 footer-v2grid">
+                        <div class="col-lg-4 col-sm-6 footer-v2grid">
                             <h4>Support</h4>
                             <ul>
 
@@ -21,48 +21,48 @@
                                     <a href="#">Cancellation & Returns</a>
                                 </li>
                                 <li>
-                                    <a href="faq.html">FAQ</a>
+                                    <a href="#">FAQ</a>
                                 </li>
                             </ul>
                         </div>
                         <!-- //services -->
                         <!-- latest posts -->
-                        <div class="col-lg-3 col-sm-6 footer-v2grid mt-sm-0 mt-5">
+                        <div class="col-lg-5 col-sm-6 footer-v2grid mt-sm-0 mt-5">
                             <h4>Latest Blog</h4>
                             <div class="footer-v2grid1 row">
                                 <div class="col-4 footer-v2grid1-left">
-                                    <a href="blog.html">
+                                    <a href="#">
                                         <img src="{{URL::asset('images/bl2.jpg')}}" alt=" " class="img-fluid">
                                     </a>
                                 </div>
                                 <div class="col-8 footer-v2grid1-right p-0">
-                                    <a href="blog.html">eveniie arcet ut moles morbi dapiti</a>
+                                    <a href="#">eveniie arcet ut moles morbi dapiti</a>
                                 </div>
                             </div>
                             <div class="footer-v2grid1 row my-2">
                                 <div class="col-4 footer-v2grid1-left">
-                                    <a href="blog.html">
+                                    <a href="#">
                                         <img src="{{URL::asset('images/bl1.jpg')}}" alt=" " class="img-fluid">
                                     </a>
                                 </div>
                                 <div class="col-8 footer-v2grid1-right p-0">
-                                    <a href="blog.html">earum rerum tenmorbi dapiti et</a>
+                                    <a href="#">earum rerum tenmorbi dapiti et</a>
                                 </div>
                             </div>
                             <div class="footer-v2grid1 row">
                                 <div class="col-4 footer-v2grid1-left">
-                                    <a href="blog.html">
+                                    <a href="#">
                                         <img src="{{URL::asset('images/bl3.jpg')}}" alt=" " class="img-fluid">
                                     </a>
                                 </div>
                                 <div class="col-8 footer-v2grid1-right p-0">
-                                    <a href="blog.html">morbi dapiti eveniet ut molesti</a>
+                                    <a href="#">morbi dapiti eveniet ut molesti</a>
                                 </div>
                             </div>
                         </div>
                         <!-- //latest posts -->
                         <!-- locations -->
-                        <div class="col-lg-3 col-sm-6 footer-v2grid my-lg-0 my-5">
+                        <!-- <div class="col-lg-3 col-sm-6 footer-v2grid my-lg-0 my-5">
                             <h4>office locations</h4>
                             <ul>
                                 <li>
@@ -84,84 +84,34 @@
                                     <a href="#">california</a>
                                 </li>
                             </ul>
-                        </div>
+                        </div> -->
                         <!-- //locations -->
                         
                         <!-- popular tags -->
                         <div class="col-lg-3  footer-v2grid mt-sm-0 mt-5">
                             <h4>popular tags</h4>
-                            <ul class="w3-tag2">
+                            <ul >
                                 <li>
-                                    <a href="shop.html">amet</a>
+                                    <a href="index.html">Home</a>
                                 </li>
                                 <li>
-                                    <a href="men.html">placerat</a>
+                                    <a href="about.html">About Us</a>
                                 </li>
                                 <li>
-                                    <a href="shop.html">Proin </a>
+                                    <a href="shop.html">Shop</a>
                                 </li>
                                 <li>
-                                    <a href="boys.html">vehicula</a>
+                                    <a href="contact.html">Contact</a>
                                 </li>
-                                <li>
-                                    <a href="shop.html">diam</a>
-                                </li>
-                                <li>
-                                    <a href="women.html">velit</a>
-                                </li>
-                                <li>
-                                    <a href="shop.html">felis</a>
-                                </li>
-                                <li>
-                                    <a href="shop.html">mauris</a>
-                                </li>
-                                <li>
-                                    <a href="girls.html">amet</a>
-                                </li>
-                                <li>
-                                    <a href="shop.html">placerat</a>
-                                </li>
-                                <li>
-                                    <a href="shop.html">Proin </a>
-                                </li>
-                                <li>
-                                    <a href="index.html">vehicula</a>
-                                </li>
-                                <li>
-                                    <a href="shop.html">diam</a>
-                                </li>
-                                <li>
-                                    <a href="men.html">velit</a>
-                                </li>
-                                <li>
-                                    <a href="shop.html">felis</a>
-                                </li>
-                                <li>
-                                    <a href="women.html">mauris</a>
-                                </li>
+
                             </ul>
                         </div>
                         <!-- //popular tags -->
                     </div>
                 </div>
                 <!-- //footer-top -->
-                <div class="footer-bottomv2 py-5">
+                <div class="footer-bottomv2 py-2">
                     <div class="container">
-                        <ul class="bottom-links-agile">
-                            <li>
-                                <a href="index.html">Home</a>
-                            </li>
-                            <li>
-                                <a href="about.html">About Us</a>
-                            </li>
-                            <li>
-                                <a href="shop.html">Shop</a>
-                            </li>
-                            <li>
-                                <a href="contact.html">Contact</a>
-                            </li>
-
-                        </ul>
                         <h3 class="text-center follow">Follow Us</h3>
                         <ul class="social-iconsv2 agileinfo">
                             <li>
@@ -205,7 +155,7 @@
                                 <span>f</span>ashion
                                 <span>h</span>ub</a>
                         </h2> -->
-                        <p>© 2020 Tylo. All rights reserved | Design by
+                        <p>© 2020 Tylo. All rights reserved | Design by Softify Digital
                         </p>
                     </div>
                 </div>

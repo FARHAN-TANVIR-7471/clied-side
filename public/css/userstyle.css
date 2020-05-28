@@ -470,6 +470,28 @@ h4.bn_right span {
       }
       /*image style*/
 
+      @media only screen and (max-width: 600px) {      
+
+      /*image style*/
+      .example-sm {
+        margin: 1em 0;
+        text-align: center;
+      }
+
+      .example-sm img {
+        width: 25%;
+        height: auto;
+
+        max-width: 35vw;
+        max-height: 35vw;
+      }
+
+      .example-cover-sm img {
+        object-fit: cover;
+      }
+      /*image style*/
+    }
+
 #slider-pager a {
     display: inline-block;
 }
