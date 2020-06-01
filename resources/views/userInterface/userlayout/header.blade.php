@@ -21,12 +21,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         }
     </script>
     <!-- Custom Theme files -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/tiny-slider.css">
     <link href="{{URL::asset('css/bootstrap.css')}}" type="text/css" rel="stylesheet" media="all">
     <!-- shop css -->
     <link href="{{URL::asset('css/shop.css')}}" type="text/css" rel="stylesheet" media="all">
     <link rel="stylesheet" href="{{URL::asset('css/owl.carousel.min.css')}}">
     <!-- Owl-Carousel-CSS -->
     <link href="{{URL::asset('css/userstyle.css')}}" type="text/css" rel="stylesheet" media="all">
+    
     <!-- font-awesome icons -->
     <link href="{{URL::asset('css/fontawesome-all.min.css')}}" rel="stylesheet">
     <!-- //Custom Theme files -->

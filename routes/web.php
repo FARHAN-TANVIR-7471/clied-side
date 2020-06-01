@@ -12,13 +12,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 /*Route::get('/test', function () {
     return view('userInterface.index');
 });*/
-Route::get('/test','UserController@userHome');
+Route::get('/','UserController@userHome');
 
 /* Admin login get*/
 Route::get('admin/login','AdminController@login');
@@ -87,6 +87,9 @@ Route::get('/user/womencustom','UserController@womencustom');
 Route::get('/user/about','UserController@about');
 Route::get('/user/contact','UserController@contact');
 Route::post('user-contact','UserController@usercontact');
+Route::get('/user/payment','UserController@payment');
+Route::get('/user/shipping','UserController@shipping');
+Route::get('/user/returnpolicy','UserController@returnpolicy');
 
 Route::post('searchproduct','UserController@searchproduct');
 Route::get('/user/search','UserController@searchpage');

@@ -48,29 +48,20 @@
                     <div class="address">
                         <h5 class="pb-3 text-capitalize">Address</h5>
                         <address>
-                            <p class="c-txt">90 Street, City, State 34789.</p>
-                            <p class="c-txt">76 Street, City, State 34789.</p>
+                            <p class="c-txt">206 Ahmed Nagar, Mirpur 1, Dhaka 1216</p>                            
                         </address>
                     </div>
                     <!-- contact details grid2-->
                     <div class="address my-5">
                         <h5 class="pb-3 text-capitalize">phone</h5>
-                        <p>
-                            +10 234 5678</p>
-                        <p>
-                            +11 222 333</p>
-                        <p>
-                            +12 222 333</p>
+                        <p>+880 1787777383</p>
+                        <p>+880 1615777383</p>
+                        
                     </div>
                     <!-- contact details grid3 -->
                     <div class="address mt-md-0 mt-3">
                         <h5 class="pb-3 text-capitalize">Email</h5>
-                        <p>
-                            <a href="mailto:info@example.com">mail@communal.com</a>
-                        </p>
-                        <p>
-                            <a href="mailto:info@example.com">mail@communalinfo.com</a>
-                        </p>
+                        <p><a href="mailto:info@example.com">tylo.com.bd@gmail.com</a></p>
                     </div>
                     <!-- //contact details row ends here -->
                 </div>

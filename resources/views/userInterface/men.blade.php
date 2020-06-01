@@ -1,6 +1,6 @@
 @include('/userInterface/userlayout/header')
 @include('/userInterface/userlayout/navbar')
-
+@include('/userInterface/userlayout/filter')
 <!-- breadcrumbs -->
 <!-- <nav aria-label="breadcrumb">
 	<ol class="breadcrumb">
@@ -16,7 +16,7 @@
 	<div class="fh-container mx-auto">
 		<div class="row my-lg-5 mb-5">
 			<!-- grid left -->
-			<div class="side-bar col-lg-3">
+			<div class="side-bar col-lg-2">
 				<!--preference -->
 				<div class="left-side">
 					<h3 class="shopf-sear-headits-sear-head font-weight-bold  text-white bg-info">
@@ -93,7 +93,7 @@
 			</div>
 			<!-- //grid left -->
 			<!-- grid right -->
-			<div class="col-lg-9 mt-lg-0 mt-5 right-product-grid">
+			<div class="col-lg-10 mt-lg-0 mt-5 right-product-grid">
 				<div id="allProduct">
 					<h4 class="font-weight-bold text-info p-2">All Products</h4>
 					<hr>
@@ -104,7 +104,7 @@
                 		@if($user->data->gender_id == 1)
 
 						<!-- card size-->
-						<div class="col-lg-3 col-sm-6 p-2">
+						<div class="col-lg-2 col-sm-6 p-2">
 							<div class="card product-men p-3">
 								<div class="men-thumb-item">
 									<div class="example example-cover example-sm example-cover-sm">

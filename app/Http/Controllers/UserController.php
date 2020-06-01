@@ -155,6 +155,33 @@ class UserController extends Controller
 
         return view('userInterface.contact',compact('totalproduct')); 
     }
+    /*payment*/
+    public function payment(){
+        $response = Http::get('http://127.0.0.1:8081/api/products/');
+        $results = json_decode($response);
+        $totalproduct = $results->data[0]->totalproduct;
+
+        return view('userInterface.payment',compact('totalproduct')); 
+    }
+
+    /*shipping*/
+
+    public function shipping(){
+        $response = Http::get('http://127.0.0.1:8081/api/products/');
+        $results = json_decode($response);
+        $totalproduct = $results->data[0]->totalproduct;
+
+        return view('userInterface.shipping',compact('totalproduct')); 
+    }
+
+   /* returnpolicy*/
+   public function returnpolicy(){
+        $response = Http::get('http://127.0.0.1:8081/api/products/');
+        $results = json_decode($response);
+        $totalproduct = $results->data[0]->totalproduct;
+
+        return view('userInterface.returnpolicy',compact('totalproduct')); 
+    }
 
     public function usercontact(Request $request){
 

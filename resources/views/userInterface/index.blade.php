@@ -3,21 +3,25 @@
 
 <div class="banner-text">
     <div class="callbacks_container">
-        <ul class="rslides" id="slider3"  style="">
-            <li class="banner">
-                
-            </li>
-            <li class="banner banner2">
-                
-            </li>
-        </ul>
+        <div class="slider-wrapper">
+            <div class="pr-5 pl-5">
+              <div class="slider-item">
+                <img style="width: 100%; height: 400px;" src="https://cnet3.cbsistatic.com/img/-qQkzFVyOPEoBRS7K5kKS0GFDvk=/940x0/2020/04/16/7d6d8ed2-e10c-4f91-b2dd-74fae951c6d8/bazaart-edit-app.jpg">
+              </div>
+            </div>
+            <div class="pr-5 pl-5">
+              <div class="slider-item">
+                <img style="width: 100%; height: 400px;" src="https://api.time.com/wp-content/uploads/2019/08/better-smartphone-photos.jpg">
+              </div>
+            </div>
+        </div>
     </div>
 </div>
     <!-- //banner -->
     
 <!-- about -->
 <div class="row no-gutters pb-5">
-    <div class="col-sm-3 d-flex justify-content-center">
+    <div class="col-sm-3 d-flex justify-content-center p-3">
         <div class="hovereffect w-100">
             <img class="w-100" src="images/a1.jpg" alt="">
             <div class="overlay">
@@ -26,7 +30,7 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-3 d-flex justify-content-center">
+    <div class="col-sm-3 d-flex justify-content-center p-3">
         <div class="hovereffect w-100">
             <img class="w-100" src="images/a2.jpg" alt="">
             <div class="overlay">
@@ -35,7 +39,7 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-3 d-flex justify-content-center">
+    <div class="col-sm-3 d-flex justify-content-center p-3">
         <div class="hovereffect w-100">
             <img class="w-100" src="images/a1.jpg" alt="">
             <div class="overlay">
@@ -44,7 +48,7 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-3 d-flex justify-content-center">
+    <div class="col-sm-3 d-flex justify-content-center p-3">
         <div class="hovereffect w-100">
             <img class="w-100" src="images/a2.jpg" alt="">
             <div class="overlay">

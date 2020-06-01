@@ -12,13 +12,13 @@
                             <ul>
 
                                 <li>
-                                    <a href="payment.html">Payment</a>
+                                    <a href="{{url('/user/payment')}}">Payment</a>
                                 </li>
                                 <li>
-                                    <a href="#">Shipping</a>
+                                    <a href="{{url('/user/shipping')}}">Shipping</a>
                                 </li>
                                 <li>
-                                    <a href="#">Cancellation & Returns</a>
+                                    <a href="{{url('/user/returnpolicy')}}">Cancellation & Returns</a>
                                 </li>
                                 <li>
                                     <a href="#">FAQ</a>
@@ -60,48 +60,23 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- //latest posts -->
-                        <!-- locations -->
-                        <!-- <div class="col-lg-3 col-sm-6 footer-v2grid my-lg-0 my-5">
-                            <h4>office locations</h4>
-                            <ul>
-                                <li>
-                                    <a href="#">new jersey</a>
-                                </li>
-                                <li>
-                                    <a href="#">texas</a>
-                                </li>
-                                <li>
-                                    <a href="#">michigan</a>
-                                </li>
-                                <li>
-                                    <a href="#">cannada</a>
-                                </li>
-                                <li>
-                                    <a href="#">brazil</a>
-                                </li>
-                                <li>
-                                    <a href="#">california</a>
-                                </li>
-                            </ul>
-                        </div> -->
-                        <!-- //locations -->
+                        
                         
                         <!-- popular tags -->
                         <div class="col-lg-3  footer-v2grid mt-sm-0 mt-5">
                             <h4>popular tags</h4>
                             <ul >
                                 <li>
-                                    <a href="index.html">Home</a>
+                                    <a href="{{url('/')}}">Home</a>
                                 </li>
                                 <li>
-                                    <a href="about.html">About Us</a>
+                                    <a href="{{url('/user/about')}}">About Us</a>
                                 </li>
-                                <li>
+                                <!-- <li>
                                     <a href="shop.html">Shop</a>
-                                </li>
+                                </li> -->
                                 <li>
-                                    <a href="contact.html">Contact</a>
+                                    <a href="{{url('/user/contact')}}">Contact</a>
                                 </li>
 
                             </ul>
@@ -115,7 +90,7 @@
                         <h3 class="text-center follow">Follow Us</h3>
                         <ul class="social-iconsv2 agileinfo">
                             <li>
-                                <a href="#">
+                                <a href="https://www.facebook.com/tylobd/">
                                     <i class="fab fa-facebook-f"></i>
                                 </a>
                             </li>
@@ -165,6 +140,19 @@
     <!-- //footer -->
     
     <!-- js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+    <script type="module">
+      var slider = tns({ 
+        "container": ".slider-wrapper",
+        "autoHeight": false,
+        "items": 1,
+        "mouseDrag": true,
+        "speed": 500,
+        "controls":false,
+        "nav":false,
+        "autoplay": true
+      });
+    </script>
     <script src="//widget.manychat.com/371031223550886.js" async="async"></script>
     <script src="{{URL::asset('js/jquery-2.2.3.min.js')}}"></script>
     <!-- //js -->

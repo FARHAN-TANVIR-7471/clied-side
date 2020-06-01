@@ -5,10 +5,14 @@
         <nav class="top_nav d-flex pt-3 pb-1">
             <!-- logo -->
             <h1>
-                <a class="navbar-brand" href="{{url('/test')}}">
-                    <img style="width: 55px; height: 55px" src="images/logo.png">
+                <a class="navbar-brand" href="{{url('/')}}">
+                    <img style="width: 55px; height: 55px" src="{{URL::asset('images/logo.png')}}">
                 </a>
             </h1>
+
+            <div>
+
+            </div>
             <!-- //logo -->
             <div class="w3ls_right_nav ml-auto d-flex">
                 <!-- search form -->
@@ -52,7 +56,7 @@
             </div>
         </nav>
         <!-- //top nav -->
-        <!-- bottom nav -->
+                    <!-- bottom nav -->
         <nav class="navbar navbar-expand-lg navbar-light justify-content-center">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -61,7 +65,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto text-center">
                     <li class="nav-item">
-                        <a class="nav-link  active" href="{{url('/test')}}">Home
+                        <a class="nav-link" href="{{url('/')}}">Home
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
@@ -74,26 +78,14 @@
                                         <a class="dropdown-item" href="{{url('/user/men')}}">Man All Product</a>
                                         <a class="dropdown-item" href="{{url('/user/menproduct/1')}}">T-Shirts</a>
                                         <a class="dropdown-item" href="{{url('/user/menproduct/2')}}">Shirts</a>
-                                        <!-- <a class="dropdown-item" href="men.html"></a>
-                                        <a class="dropdown-item" href="men.html">Suits & Blazers</a>
-                                        <a class="dropdown-item" href="men.html">Jackets</a>
-                                        <a class="dropdown-item" href="men.html">Trousers</a> -->
                                     </div>
                                     <div class="col-md-4">
                                         <a class="dropdown-item" href="{{url('/user/menproduct/3')}}">Panjabi & Fatua</a>
                                         <a class="dropdown-item" href="{{url('/user/menproduct/4')}}">Plo Shirts</a>
-                                        <!-- <a class="dropdown-item" href="men.html">Shirts</a>
-                                        <a class="dropdown-item" href="men.html">Suits & Blazers</a>
-                                        <a class="dropdown-item" href="men.html">Coats & Jackets</a>
-                                        <a class="dropdown-item" href="men.html">Jackets</a> -->
                                     </div>
                                     <div class="col-md-4">
                                         <a class="dropdown-item" href="{{url('/user/menproduct/5')}}">Jeans</a>
                                         <a class="dropdown-item" href="{{url('/user/menproduct/6')}}">Pant</a>
-                                        <!-- <a class="dropdown-item" href="men.html">Shirts</a>
-                                        <a class="dropdown-item" href="men.html">Suits & Blazers</a>
-                                        <a class="dropdown-item" href="men.html">Jackets</a>
-                                        <a class="dropdown-item" href="men.html">Trousers</a> -->
                                     </div>
                                 </div>
                             </div>
@@ -108,23 +100,14 @@
                                         <a class="dropdown-item" href="{{url('/user/women')}}">Women All Product</a>
                                         <a class="dropdown-item" href="{{url('/user/womenproduct/7')}}">Traditional Clothing</a>
                                         <a class="dropdown-item" href="{{url('/user/womenproduct/8')}}">Saree</a>
-                                        <!-- <a class="dropdown-item" href="women.html">Skirts</a>
-                                        <a class="dropdown-item" href="women.html">Jeans</a>
-                                        <a class="dropdown-item" href="women.html">Tunics</a> -->
                                     </div>
                                     <div class="col-md-4">
                                         <a class="dropdown-item" href="{{url('/user/womenproduct/9')}}">Shalwar Kameez</a>
                                         <a class="dropdown-item" href="{{url('/user/womenproduct/10')}}">Kurtis</a>
-                                        <!-- <a class="dropdown-item" href="women.html">Tunics</a>
-                                        <a class="dropdown-item" href="women.html">Skirts</a>
-                                        <a class="dropdown-item" href="women.html">Jeans</a> -->
                                     </div>
                                     <div class="col-md-4">
                                         <a class="dropdown-item" href="{{url('/user/womenproduct/11')}}">Chothing</a>
                                         <a class="dropdown-item" href="{{url('/user/womenproduct/12')}}">Women Bags</a>
-                                        <!-- <a class="dropdown-item" href="women.html">Skirts</a>
-                                        <a class="dropdown-item" href="women.html">Jeans</a>
-                                        <a class="dropdown-item" href="women.html">Tunics</a> -->
                                     </div>
                                 </div>
                             </div>
@@ -142,13 +125,27 @@
                                         <a class="dropdown-item" href="{{url('/user/mancustom')}}">Man custom clothing</a>
                                         
                                     </div>
-                                    <div class="col-md-4">
-                                        <a class="dropdown-item" href="{{url('/user/womencustom')}}">Women custom clothing</a>
+                                    <div class="col-md-4 pr-5">
+                                        <a class="dropdown-item " href="{{url('/user/womencustom')}}">Women custom clothing</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </li>
+
+                    <!-- <li class="nav-item dropdown has-mega-menu" style="position:static;">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Test</a>
+                        <div class="dropdown-menu" style="width:100%">
+                            <ul>
+                                <li class="nav-item dropdown has-mega-menu">
+                                    <a class="dropdown-item btn" id="custombtn">Custom</a>
+                                </li>
+                                <li class="nav-item dropdown has-mega-menu">
+                                    <a class="dropdown-item btn" id="trendbrn">Trending</a>
+                                </li>
+                            </ul>
+                         </div>
+                    </li> -->
                     
                     <li class="nav-item">
                         <a class="nav-link" href="{{url('/user/about')}}">About</a>
@@ -162,7 +159,7 @@
                 </ul>
             </div>
         </nav>
-        <!-- //bottom nav -->
+        <!-- //bottom nav -->        
     </div>
     <!-- //header container -->
 </header>
