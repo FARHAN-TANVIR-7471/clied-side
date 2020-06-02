@@ -41,7 +41,11 @@
                 </form>
                 <!-- search form -->
                 <div class="nav-icon d-flex">
-                    
+                    <!-- sigin and sign up -->
+                        <a class="text-dark login_btn align-self-center mx-3" href="#myModal_btn" data-toggle="modal" data-target="#myModal_btn">
+                            <i class="far fa-user"></i>
+                        </a>
+                        <!-- sigin and sign up -->
                     <!-- shopping cart -->
                     <div class="cart-mainf">
                         <div class="hubcart hubcart2 cart cart box_1">    
@@ -70,7 +74,7 @@
                         </a>
                     </li>
                     <li class="nav-item dropdown has-mega-menu" style="position:static;">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Men's clothing</a>
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Men's Fashion</a>
                         <div class="dropdown-menu" style="width:100%">
                             <div class="px-0 container">
                                 <div class="row">
@@ -92,7 +96,7 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown has-mega-menu" style="position:static;">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Women's clothing</a>
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Women's Fashion</a>
                         <div class="dropdown-menu" style="width:100%">
                             <div class="px-0 container">
                                 <div class="row">
@@ -114,7 +118,7 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown has-mega-menu" style="position:static;">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Custom clothing</a>
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Custom Fashion</a>
                         <div class="dropdown-menu" style="width:100%">
                             <div class="px-0 container">
                                 <div class="row">

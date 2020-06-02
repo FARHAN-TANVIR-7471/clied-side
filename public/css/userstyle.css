@@ -911,6 +911,7 @@ form.f-color .form-control {
     color: #000;
     letter-spacing: 1px;
     background: transparent;
+    margin-top: -10px;
 }
 
 .address h5,

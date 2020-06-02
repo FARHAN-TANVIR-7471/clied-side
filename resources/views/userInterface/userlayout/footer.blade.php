@@ -138,6 +138,110 @@
         </div>
     </footer>
     <!-- //footer -->
+
+    <!-- sign up Modal -->
+    <div class="modal fade" id="myModal_btn" tabindex="-1" role="dialog" aria-labelledby="myModal_btn" aria-hidden="true">
+        <div class="agilemodal-dialog modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Register Now</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body pt-3 pb-5 px-sm-5">
+                    <div class="row">
+                        <div class="col-md-6 mx-auto align-self-center">
+                            <img src="{{URL::asset('images/p3.png')}}" class="img-fluid" alt="login_image" />
+                        </div>
+                        <div class="col-md-6">
+                            <form action="#" method="post">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Your Name " name="Name" id="recipient-name1" required="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Email " name="Email" id="recipient-email" required="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" class="form-control" placeholder="Phone Number " name="number" id="recipient-number" required="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Password " name="Password" id="password1" required="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Confirm Password " name="Confirm Password" id="password2" required="">
+                                </div>
+                                <div class="sub-w3l">
+                                    <div class="sub-agile">
+                                        <input type="checkbox" id="brand2" value="">
+                                        <label for="brand2" class="mb-3">
+                                            <span></span>I Accept to the Terms & Conditions</label>
+                                    </div>
+                                </div>
+                                <div class="right-w3l">
+                                    <input type="submit" class="form-control" value="Register">
+                                </div>
+                            </form>
+                            <p class="text-center mt-3">Already a member?
+                                <a href="#" data-toggle="modal" data-target="#exampleModal1" class="text-dark login_btn">
+                                    Login Now</a>
+                            </p>
+                            <hr>
+                            
+                            <p class="text-center m-3 text-info">*Register Facebook or Google</p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <button type="button" class="btn btn-info btn-sm btn-block"><i class="fab fa-facebook-square mr-2"></i>facebook</button>
+                                </div>
+                                <div class="col-md-6">
+                                    <button type="button" class="btn btn-danger btn-sm btn-block"><i class="fab fa-google mr-2"></i>Google</button>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //signup modal -->
+    <!-- signin Modal -->
+    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModal1" aria-hidden="true">
+        <div class="agilemodal-dialog modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body  pt-3 pb-5 px-sm-5">
+                    <div class="row">
+                        <div class="col-md-6 align-self-center">
+                            <img src="{{URL::asset('images/p3.png')}}" class="img-fluid" alt="login_image" />
+                        </div>
+                        <div class="col-md-6">
+                            <form action="#" method="post">
+                                <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">Your Name</label>
+                                    <input type="text" class="form-control" placeholder=" " name="Name" id="recipient-name" required="">
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">Password</label>
+                                    <input type="password" class="form-control" placeholder=" " name="Password" required="">
+                                </div>
+                                <div class="right-w3l">
+                                    <input type="submit" class="form-control" value="Login">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- signin Modal -->
     
     <!-- js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
