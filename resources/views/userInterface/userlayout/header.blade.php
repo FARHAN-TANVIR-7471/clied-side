@@ -6,7 +6,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 
 <!DOCTYPE html>
-<html lang="zxx">
+<html>
 
 <head>
     <title>Fashion Hub Ecommerce Category Bootstrap Responsive Website Template| Home :: w3layouts</title>
@@ -21,6 +21,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         }
     </script>
     <!-- Custom Theme files -->
+    <link rel="icon" href="{{URL::asset('images/Tylo-tab.png')}}" type="image/gif" sizes="16x16">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/tiny-slider.css">
     <link href="{{URL::asset('css/bootstrap.css')}}" type="text/css" rel="stylesheet" media="all">
     <!-- shop css -->

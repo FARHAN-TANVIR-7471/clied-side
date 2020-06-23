@@ -6,12 +6,12 @@
         <div class="slider-wrapper">
             <div class="pr-5 pl-5">
               <div class="slider-item">
-                <img style="width: 100%; height: 400px;" src="https://cnet3.cbsistatic.com/img/-qQkzFVyOPEoBRS7K5kKS0GFDvk=/940x0/2020/04/16/7d6d8ed2-e10c-4f91-b2dd-74fae951c6d8/bazaart-edit-app.jpg">
+                <img style="width: 100%; height: 400px;" src="{{URL::asset('images/MenBanner.jpg')}}">
               </div>
             </div>
             <div class="pr-5 pl-5">
               <div class="slider-item">
-                <img style="width: 100%; height: 400px;" src="https://api.time.com/wp-content/uploads/2019/08/better-smartphone-photos.jpg">
+                <img style="width: 100%; height: 400px;" src="{{URL::asset('images/WomenBanner.jpg')}}">
               </div>
             </div>
         </div>
@@ -76,7 +76,6 @@
         <?php
             $count++
         ?>
-
         <!-- card -->
         <div class="col-lg-2 col-sm-6 p-2">
             <div class="card product-men p-3">
@@ -262,6 +261,74 @@
             <!-- //card -->
         </div>
     </div>
-</section>  
+
     
+    <div class="fb-customerchat"
+ page_id="1829760867340607"
+ minimized="false">
+</div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '912333495590130',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v2.11'
+    });
+  };
+(function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+</section>  
+
+<div class="fb-customerchat"
+ page_id="1829760867340607"
+ minimized="false">
+</div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '912333495590130',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v2.11'
+    });
+  };
+(function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
 @include('/userInterface/userlayout/footer')
+
+<div class="fb-customerchat"
+ page_id="1829760867340607"
+ minimized="false">
+</div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '912333495590130',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v2.11'
+    });
+  };
+(function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>

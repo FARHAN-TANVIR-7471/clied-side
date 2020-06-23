@@ -104,7 +104,7 @@
                 		@if($user->data->gender_id == 1)
 
 						<!-- card size-->
-						<div class="col-lg-2 col-sm-6 p-2">
+						<div class="col-lg-3 col-sm-6 p-2">
 							<div class="card product-men p-3">
 								<div class="men-thumb-item">
 									<div class="example example-cover example-sm example-cover-sm">

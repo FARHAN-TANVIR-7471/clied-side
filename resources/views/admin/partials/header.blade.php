@@ -7,6 +7,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Dashboard - SB Admin</title>
+        <link rel="icon" href="{{URL::asset('images/Tylo-tab.png')}}" type="image/gif" sizes="16x16">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link href="{{URL::asset('css/styles.css')}}" rel="stylesheet" />

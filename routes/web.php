@@ -2,22 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-/*Route::get('/', function () {
-    return view('welcome');
-});*/
-/*Route::get('/test', function () {
-    return view('userInterface.index');
-});*/
 Route::get('/','UserController@userHome');
 
 /* Admin login get*/
@@ -25,6 +9,12 @@ Route::get('admin/login','AdminController@login');
 
 /* Admin login post*/
 Route::post('/adminlogin','AdminController@adminLogin');
+
+/* Admin login post*/
+Route::post('/userlogin','UserController@userLogin');
+
+/*usercreate*/
+Route::post('/usercreate','UserController@usercreate');
 
 Route::get('/admin/register', function () {
     return view('admin.register');
@@ -45,6 +35,12 @@ Route::get('/admin/product','AdminController@product');
 /*product insert*/
 Route::post('/productinsert','AdminController@productinsert');
 //Route::get('/productinsert','AdminController@productinsert');
+
+/*Product update get*/
+Route::get('/admin/productupdate/{id}','AdminController@productUpdateGet');
+
+/*Product update get*/
+Route::put('/productupdate','AdminController@productupdate');
 
 /*others*/
 Route::get('/admin/others','AdminController@others');
@@ -68,6 +64,8 @@ Route::get('/admin/contact','AdminController@contact');
 /*product_type Edit*/
 Route::get('/edit/producttype/{id}','AdminController@editProductType');
 Route::post('/update/producttype/{id}','AdminController@updateProductType');
+
+Route::get('/admin/Productinventory','AdminController@productinventory')->name('productinventory');
 
 /*Auth::routes();
 

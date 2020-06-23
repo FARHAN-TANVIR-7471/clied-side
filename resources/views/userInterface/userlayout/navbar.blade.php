@@ -42,11 +42,12 @@
                 <!-- search form -->
                 <div class="nav-icon d-flex">
                     <!-- sigin and sign up -->
-                        <a class="text-dark login_btn align-self-center mx-3" href="#myModal_btn" data-toggle="modal" data-target="#myModal_btn">
+                        <a id="loginbtn" class="text-dark login_btn align-self-center mx-3" href="#myModal_btn" data-toggle="modal" data-target="#myModal_btn">
                             <i class="far fa-user"></i>
                         </a>
                         <!-- sigin and sign up -->
                     <!-- shopping cart -->
+                    
                     <div class="cart-mainf">
                         <div class="hubcart hubcart2 cart cart box_1">    
                             <a href="{{route('cart.index')}}" class="btn  btn-info mt-1">

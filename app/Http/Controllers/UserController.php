@@ -11,6 +11,48 @@ use Illuminate\Http\Client\Response;
 
 class UserController extends Controller
 {
+    /*userLogin*/
+    /*login post request*/
+    public function userLogin(Request $request){
+        $email = $request->input('email');
+        $password = $request->input('password');
+        
+        $response = Http::post('http://127.0.0.1:8081/api/login',[
+                      'email'=>$email,
+                      'password'=>$password
+        ]); 
+        //dd($response);
+        $staCode = $response->status(); 
+
+        if($staCode == 200){
+
+            //return redirect('/dashboard');
+            return back();
+        }
+        else {
+            return back()->with('error', 'Wrong Login Details');
+        }
+        //return redirect('/dashboard');
+    }
+
+    public function usercreate(Request $request){
+
+        $name = $request->input('name');
+        $email = $request->input('email');
+        $phone = $request->input('phone');
+        $password = $request->input('password');
+
+        $response = Http::post('http://127.0.0.1:8081/api/usersignin',[
+                      'name'=>$name,
+                      'email'=>$email,
+                      'phone'=>$phone, 
+                      'message'=>$password 
+        ]);      
+        
+        return back();
+    }
+
+
 	/*user home page*/
     public function userHome(){
 
@@ -63,7 +105,7 @@ class UserController extends Controller
         return view('userInterface.womanproduct',compact('results','totalproduct'),$data); 
     } 
 
-    /*mens*/
+    /*productDescription*/
     public function productDescription($id){
 
         $response = Http::get("http://127.0.0.1:8081/api/products/$id");

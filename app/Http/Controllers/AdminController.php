@@ -50,7 +50,6 @@ class AdminController extends Controller
     }
 
     /*product Input*/ 
-
     public function productinsert(Request $request){
         //dd($request);
         $file = $request->file('image');
@@ -87,6 +86,56 @@ class AdminController extends Controller
         return back();
     }
 
+    /*product update*/
+    public function productUpdateGet($id){
+
+        $response = Http::get("http://127.0.0.1:8081/api/products/$id");
+        $results = json_decode($response);
+        //dd($results);
+        return view('admin.productupdate',compact('results'));
+    }
+
+    /*product update*/ 
+    public function productupdate(Request $request){
+        
+        $file = $request->file('image');
+        $id = $request->input('id');
+        $brand = $request->input('brand');
+        $gender = $request->input('gender');
+        $custom = $request->input('custom');
+        $product_type =$request->input('product_type');
+        $price =$request->input('price');
+        $number =$request->input('number');
+        $discount =$request->input('discount');
+        $color =$request->input('color');
+        $size =$request->input('size');
+        $description =$request->input('description');
+        $image ='/images/'.$file->getClientOriginalName();
+
+        $destinationPath = 'images/';
+        $file->move($destinationPath,$file->getClientOriginalName());
+
+        $response = Http::put("http://127.0.0.1:8081/api/products/$id",[
+                      'name'=>$brand,
+                      'price'=>$price,
+                      'discount'=>$discount, 
+                      'gender_id'=>$gender, 
+                      'product_type_id'=>$product_type,  
+                      'custom'=>$custom, 
+                      'number'=>$number, 
+                      'size'=>$size,
+                      'description'=>$description,
+                      'image'=>$image,
+                      'color'=>$color
+        ]);      
+        return redirect('/admin/product');
+    }
+
+    /*productType*/
+    public function productinventory(){
+        return view('admin.productinventory'); 
+    }
+
     /*Order*/
     public function order(){
 
@@ -115,7 +164,6 @@ class AdminController extends Controller
         
         return view('admin.contact', compact('results'));  
     }
-
 
     public function others(){
     	return view('admin.others'); 

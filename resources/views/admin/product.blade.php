@@ -29,7 +29,7 @@
                                     <th>Size</th>
                                     <th>Trend</th>
                                     <th>Image</th>
-                                    <!-- <th>Actions</th> -->
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tfoot>
@@ -44,7 +44,7 @@
                                     <th>Size</th>
                                     <th>Trend</th>
                                     <th>Image</th>
-                                    <!-- <th>Actions</th> -->
+                                    <th>Actions</th>
                                 </tr>
                             </tfoot>
                             <tbody>
@@ -64,10 +64,10 @@
                                     <td>
                                         <img style="width: 30%; height:15%" src="{{ $user->data->image }}">
                                     </td>
-                                    <!-- <td class="text-center">
-                                        <a href="#" class="view" title="View" data-toggle="tooltip"><i style="color: #03A9F4" class="material-icons">&#xE417;</i></a>
-                                        <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i style="color: #FFC107;" class="material-icons">&#xE254;</i></a>                                    
-                                    </td> -->
+                                    <td class="text-center">
+                                        <!-- <a href="#" class="view" title="View" data-toggle="tooltip"><i style="color: #03A9F4" class="material-icons">&#xE417;</i></a> -->
+                                        <a href="{{'/admin/productupdate/' . $user->data->id}}" class="edit" title="Edit" data-toggle="tooltip"><i style="color: #FFC107;" class="material-icons">&#xE254;</i></a>                                    
+                                    </td>
                                 </tr>
                                 @endforeach                                            
                             </tbody>
