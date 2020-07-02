@@ -38,6 +38,7 @@
                             {{csrf_field()}}
                             <div class="quantity">
                                 <input  type="hidden" name="qty" value="1">
+                                <input type="hidden" name="userId" value="{{ $_COOKIE['user'] }}">
                                 <input type="hidden" name="pdtId" value="{{ $user->data->id }}">
                                 <input  type="hidden" name="pdtName" value="{{$user->data->name}}">
                                 <input type="hidden" name="pdtPrice" value="{{ $user->data->totalPrice }}">

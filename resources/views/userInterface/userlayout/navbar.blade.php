@@ -56,6 +56,7 @@
                             </a>
                         </div>
                     </div>
+                    
                     <!-- //shopping cart ends here -->
                 </div>
             </div>
@@ -169,5 +170,7 @@
     <!-- //header container -->
 </header>
 <!-- //header -->
+
+
 
     

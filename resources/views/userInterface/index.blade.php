@@ -99,13 +99,15 @@
                     </div>
                 </div>
                 <!-- card footer -->
+                <!-- <p>{{ $_COOKIE['user'] }}</p> -->
                 <div class="card-footer d-flex justify-content-end">
                     <form action="{{route('cart.add')}}" method="post">
                         {{csrf_field()}}
                         <div class="quantity">
-                            <input  type="hidden" name="qty" value="1">
+                            <input type="hidden" name="qty" value="1">
+                            <input type="hidden" name="userId" value="{{ $_COOKIE['user'] }}">
                             <input type="hidden" name="pdtId" value="{{ $user->data->id }}">
-                            <input  type="hidden" name="pdtName" value="{{$user->data->name}}">
+                            <input type="hidden" name="pdtName" value="{{$user->data->name}}">
                             <input type="hidden" name="pdtPrice" value="{{ $user->data->totalPrice }}">
                         </div>
                         <button type="submit" class="hub-cart phub-cart btn">
@@ -128,11 +130,6 @@
     </div>
 </div>
 </section>
-
-
-
-
-
 
 <section class="tabs_pro py-md-5 pt-sm-3 pb-5">
     <h5 class="head_agileinfo text-center text-capitalize pb-5">
@@ -177,6 +174,7 @@
                             {{csrf_field()}}
                             <div class="quantity">
                                 <input  type="hidden" name="qty" value="1">
+                                <input type="hidden" name="userId" value="{{ $_COOKIE['user'] }}">
                                 <input type="hidden" name="pdtId" value="{{ $user->data->id }}">
                                 <input  type="hidden" name="pdtName" value="{{$user->data->name}}">
                                 <input type="hidden" name="pdtPrice" value="{{ $user->data->totalPrice }}">
@@ -241,6 +239,7 @@
                             {{csrf_field()}}
                             <div class="quantity">
                                 <input  type="hidden" name="qty" value="1">
+                                <input type="hidden" name="userId" value="{{ $_COOKIE['user'] }}">
                                 <input type="hidden" name="pdtId" value="{{ $user->data->id }}">
                                 <input  type="hidden" name="pdtName" value="{{$user->data->name}}">
                                 <input type="hidden" name="pdtPrice" value="{{ $user->data->totalPrice }}">
@@ -332,3 +331,4 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
+

@@ -40,6 +40,7 @@
         <div class="creditly-wrapper wrapper">
             <div class="information-wrapper">
                 <div class="first-row form-group">
+                    <input type="hidden" name="userId" value="{{ $_COOKIE['user'] }}">
                     <div class="controls">
                         <label class="control-label">Full name: </label>
                         <input class="billing-address-name form-control" type="text" name="name" placeholder="Full name">
@@ -65,7 +66,7 @@
                         <textarea class="form-control" name="address"> </textarea>
                     </div>
                 </div>
-                <a href="/test" class="btn btn-success">Continue Shopping</a>
+                <a href="/" class="btn btn-success">Continue Shopping</a>
                 <button type="submit"  class="btn btn-warning">place order</button>
             </div>
         </div>

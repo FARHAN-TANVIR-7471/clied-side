@@ -11,7 +11,6 @@
                 <button type="button" class="btn btn-info m-1" id="showbtn">Show Product</button>
             </div>
             
-            
             <div class="card mb-4" id="datatable">
                 <div class="card-header"><i class="fas fa-table mr-1"></i>Product DataTable</div>
                 <div class="card-body">
@@ -216,4 +215,49 @@
             $("#inputfild").hide();
         });
     });
+
+
+
+    //Console logging (html)
+    if (!window.console)
+        console = {};
+
+        var console_out = document.getElementById('console_out');
+        var output_format = "jpg";
+
+
+        var encodeButton = document.getElementById('jpeg_encode_button');
+        var encodeQuality = document.getElementById('jpeg_encode_quality');
+
+
+        function compressFile(loadedData, preview) { 
+          console.log('width: ' + loadedData.width + ' height: ' + loadedData.height);
+
+          var result_image = document.getElementById('image');
+          var quality = parseInt(encodeQuality.value);
+          console.log("Quality >>" + quality);
+
+          console.log("process start...");
+          var time_start = new Date().getTime();
+
+          var mime_type = "image/jpeg";
+          if (typeof output_format !== "undefined" && output_format == "png") {
+            mime_type = "image/png";
+        }
+
+          var cvs = document.createElement('canvas');
+          cvs.width = loadedData.width;
+          cvs.height = loadedData.height;
+          var ctx = cvs.getContext("2d").drawImage(loadedData, 0, 0);
+          var newImageData = cvs.toDataURL(mime_type, quality / 100);
+          var result_image_obj = new Image();
+          result_image_obj.src = newImageData;
+          result_image.src = result_image_obj.src;
+
+          result_image.onload = function() {}
+          var duration = new Date().getTime() - time_start;
+
+          console.log("process finished...");
+          console.log('Processed in: ' + duration + 'ms');
+    }
 </script>

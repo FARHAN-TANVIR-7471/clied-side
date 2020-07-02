@@ -26,12 +26,13 @@ class ShoppingController extends Controller
 			}
 		
 		$response = Http::post('http://127.0.0.1:8081/api/cart', [
-			'user_id' => $user_id,
+			//'user_id' => $user_id,
 			'ip_address' => request()->ip(),
+			'user_id' => request()->userId,
 			'product_id' => request()->pdtId,
 			'product_quantity' => request()->qty,
 		]);
-		return redirect('/test');
+		return redirect('/');
 	}
 	
 	

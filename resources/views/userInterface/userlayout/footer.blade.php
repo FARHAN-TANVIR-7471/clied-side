@@ -164,11 +164,11 @@
                                 <input type="password" class="form-control" placeholder=" " name="password" required="">
                             </div>
                             <div class="right-w3l">
-                                <input type="submit" class="form-control" value="Login">
+                                <input type="submit" class="form-control" value="Login" onclick="myFunction()">
                             </div>
                         </form>
                         <p class="text-center mt-3">If you have no accout?
-                            <a href="#" data-toggle="modal" data-target="#exampleModal1" class="text-dark login_btn">
+                            <a href="#" data-toggle="modal" data-target="#exampleModal1" class="text-dark login_btn" >
                                 Sinup Now</a>
                         </p>
                     </div>
@@ -243,7 +243,15 @@
         </div>
     </div>
 </div>
-<!-- signin Modal -->
+<!-- signup Modal -->
+
+<script type="text/javascript">
+    function myFunction() {
+        //sessionStorage.setItem("userid", 1);
+        //alert(sessionStorage.getItem("userid"));
+      //alert("Hello! I am an alert box!");
+    }
+</script>
 
 <!-- js -->
 <script type="text/javascript">

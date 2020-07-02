@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
@@ -11,7 +10,6 @@ use Illuminate\Http\Client\Response;
 
 class UserController extends Controller
 {
-    /*userLogin*/
     /*login post request*/
     public function userLogin(Request $request){
         $email = $request->input('email');
@@ -21,13 +19,27 @@ class UserController extends Controller
                       'email'=>$email,
                       'password'=>$password
         ]); 
-        //dd($response);
+
+        $data = $response->body();
+        $results = json_decode($data);
+        $data = $results->data;
+        //dd($data);
+        $cookie_name = "user";
+        $cookie_value = $results->data->id;
+        setcookie($cookie_name,$cookie_value, time() + (86400 * 30), "/"); //name,value,time,url
+        //dd($_COOKIE['user']);
+
         $staCode = $response->status(); 
-
         if($staCode == 200){
+            $response = Http::get('http://127.0.0.1:8081/api/products/');
+            $results = json_decode($response);
+            $totalproduct = $results->data[0]->totalproduct;
 
-            //return redirect('/dashboard');
-            return back();
+            $response = Http::get("http://127.0.0.1:8081/api/order");
+            $order = json_decode($response);
+            
+            return view('userprofile.userprofile',compact('data','totalproduct','order'));
+            //return back();
         }
         else {
             return back()->with('error', 'Wrong Login Details');
@@ -52,6 +64,13 @@ class UserController extends Controller
         return back();
     }
 
+    public function profile(){
+        $response = Http::get('http://127.0.0.1:8081/api/products/');
+        $results = json_decode($response);
+
+        $totalproduct = $results->data[0]->totalproduct;
+        return view('userprofile.userprofile',compact('results','totalproduct'));
+    }
 
 	/*user home page*/
     public function userHome(){
@@ -60,8 +79,6 @@ class UserController extends Controller
         $results = json_decode($response);
 
         $totalproduct = $results->data[0]->totalproduct;
-        // dd($carts);
-        // dd($results->data[0]);
     	return view('userInterface.index',compact('results','totalproduct'));
     }
 
@@ -93,14 +110,11 @@ class UserController extends Controller
 
     /*womenproduct*/
     public function womenproduct($id){
-        //echo $id;
 
         $data['product_type'] = $id;
-
         $response = Http::get('http://127.0.0.1:8081/api/products/');
         $results = json_decode($response);
         $totalproduct = $results->data[0]->totalproduct;
-        //dd($results);
 
         return view('userInterface.womanproduct',compact('results','totalproduct'),$data); 
     } 
@@ -111,12 +125,11 @@ class UserController extends Controller
         $response = Http::get("http://127.0.0.1:8081/api/products/$id");
         $results = json_decode($response);
         $totalproduct = $results->totalproduct;
-        // dd($totalproduct);
 
     	return view('userInterface.productDescription',compact('results','totalproduct')); 
     }
 
-        /*Women*/
+    /*Women*/
     public function women(){
 
         $response = Http::get('http://127.0.0.1:8081/api/products/');
@@ -197,6 +210,23 @@ class UserController extends Controller
 
         return view('userInterface.contact',compact('totalproduct')); 
     }
+
+    public function usercontact(Request $request){
+
+        $contactusername = $request->input('contactusername');
+        $contactemail = $request->input('contactemail');
+        $contactnumber = $request->input('contactnumber');
+        $contactcomment = $request->input('contactcomment');
+
+        $response = Http::post('http://127.0.0.1:8081/api/contructinsert/',[
+                      'name'=>$contactusername,
+                      'email'=>$contactemail,
+                      'phone'=>$contactnumber, 
+                      'message'=>$contactcomment 
+        ]);      
+        return back();
+    }
+
     /*payment*/
     public function payment(){
         $response = Http::get('http://127.0.0.1:8081/api/products/');
@@ -207,7 +237,6 @@ class UserController extends Controller
     }
 
     /*shipping*/
-
     public function shipping(){
         $response = Http::get('http://127.0.0.1:8081/api/products/');
         $results = json_decode($response);
@@ -223,23 +252,6 @@ class UserController extends Controller
         $totalproduct = $results->data[0]->totalproduct;
 
         return view('userInterface.returnpolicy',compact('totalproduct')); 
-    }
-
-    public function usercontact(Request $request){
-
-        $contactusername = $request->input('contactusername');
-        $contactemail = $request->input('contactemail');
-        $contactnumber = $request->input('contactnumber');
-        $contactcomment = $request->input('contactcomment');
-
-        $response = Http::post('http://127.0.0.1:8081/api/contructinsert/',[
-                      'name'=>$contactusername,
-                      'email'=>$contactemail,
-                      'phone'=>$contactnumber, 
-                      'message'=>$contactcomment 
-        ]);      
-        
-        return back();
     }
     
 }

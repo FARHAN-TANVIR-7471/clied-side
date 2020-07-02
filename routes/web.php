@@ -69,12 +69,18 @@ Route::get('/admin/Productinventory','AdminController@productinventory')->name('
 
 /*Auth::routes();
 
+
 Route::group(['middleware' => ['auth', 'admin']], function(){
 	
 
 });*/
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/profile', 'UserController@profile');
+/*Route::get('/profile', function () {
+    return view('userprofile.userprofile');
+});*/
 
 Route::get('/user/men','UserController@men');
 Route::get('/user/women','UserController@women');

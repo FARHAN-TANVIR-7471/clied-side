@@ -21,7 +21,7 @@ class CheckoutController extends Controller
     public function store(Request $request)
     {
         $response = Http::post('http://127.0.0.1:8081/api/order', [
-            'user_id' => $request->user_id,
+            'user_id' => $request->userId,
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
@@ -29,6 +29,6 @@ class CheckoutController extends Controller
             'ip_address' =>  request()->ip(),
         ]);
         
-        return redirect('/test');
+        return redirect('/');
     }
 }
